@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>LinguaQuest</title>
+
+<!-- PWA -->
+<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIkxpbmd1YVF1ZXN0IiwKICAic2hvcnRfbmFtZSI6ICJMaW5ndWFRdWVzdCIsCiAgImRlc2NyaXB0aW9uIjogIkRvIGJcdTAwZTFzaWNvIFx1MDBlMCBmbHVcdTAwZWFuY2lhIFx1MjAxNCBubyBzZXUgcml0bW8iLAogICJzdGFydF91cmwiOiAiLi9pbmRleC5odG1sIiwKICAic2NvcGUiOiAiLi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdCIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiIzBmMGUxNyIsCiAgInRoZW1lX2NvbG9yIjogIiMwZjBlMTciLAogICJsYW5nIjogInB0LUJSIiwKICAiY2F0ZWdvcmllcyI6IFsKICAgICJlZHVjYXRpb24iLAogICAgImdhbWVzIgogIF0sCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0F4T1RJZ01Ua3lJajRLSUNBOGNtVmpkQ0IzYVdSMGFEMGlNVGt5SWlCb1pXbG5hSFE5SWpFNU1pSWdjbmc5SWpNNElpQm1hV3hzUFNJak1HWXdaVEUzSWk4K0NpQWdQR05wY21Oc1pTQmplRDBpT1RZaUlHTjVQU0k1TmlJZ2NqMGlOVElpSUdacGJHdzlJbTV2Ym1VaUlITjBjbTlyWlQwaUkyWTJZemt3WlNJZ2MzUnliMnRsTFhkcFpIUm9QU0kySWk4K0NpQWdQR1ZzYkdsd2MyVWdZM2c5SWprMklpQmplVDBpT1RZaUlISjRQU0l5T0NJZ2NuazlJalV5SWlCbWFXeHNQU0p1YjI1bElpQnpkSEp2YTJVOUlpTm1ObU01TUdVaUlITjBjbTlyWlMxM2FXUjBhRDBpTmlJdlBnb2dJRHhzYVc1bElIZ3hQU0kwTkNJZ2VURTlJamsySWlCNE1qMGlNVFE0SWlCNU1qMGlPVFlpSUhOMGNtOXJaVDBpSTJZMll6a3daU0lnYzNSeWIydGxMWGRwWkhSb1BTSTJJaTgrQ2lBZ1BHeHBibVVnZURFOUlqazJJaUI1TVQwaU5EUWlJSGd5UFNJNU5pSWdlVEk5SWpFME9DSWdjM1J5YjJ0bFBTSWpaalpqT1RCbElpQnpkSEp2YTJVdGQybGtkR2c5SWpZaUx6NEtJQ0E4Wld4c2FYQnpaU0JqZUQwaU9UWWlJR041UFNJNU5pSWdjbmc5SWpVeUlpQnllVDBpTWpnaUlHWnBiR3c5SW01dmJtVWlJSE4wY205clpUMGlJMlkyWXprd1pTSWdjM1J5YjJ0bExYZHBaSFJvUFNJMElpQnpkSEp2YTJVdFpHRnphR0Z5Y21GNVBTSXdJaTgrQ2lBZ1BHeHBibVVnZURFOUlqUTVJaUI1TVQwaU56QWlJSGd5UFNJeE5ETWlJSGt5UFNJM01DSWdjM1J5YjJ0bFBTSWpaalpqT1RCbElpQnpkSEp2YTJVdGQybGtkR2c5SWpNdU5TSWdjM1J5YjJ0bExXeHBibVZqWVhBOUluSnZkVzVrSWk4K0NpQWdQR3hwYm1VZ2VERTlJalE1SWlCNU1UMGlNVEl5SWlCNE1qMGlNVFF6SWlCNU1qMGlNVEl5SWlCemRISnZhMlU5SWlObU5tTTVNR1VpSUhOMGNtOXJaUzEzYVdSMGFEMGlNeTQxSWlCemRISnZhMlV0YkdsdVpXTmhjRDBpY205MWJtUWlMejRLUEM5emRtYysiLAogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLAogICAgICAicHVycG9zZSI6ICJhbnkiCiAgICB9LAogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0F4T1RJZ01Ua3lJajRLSUNBOGNtVmpkQ0IzYVdSMGFEMGlNVGt5SWlCb1pXbG5hSFE5SWpFNU1pSWdjbmc5SWpNNElpQm1hV3hzUFNJak1HWXdaVEUzSWk4K0NpQWdQR05wY21Oc1pTQmplRDBpT1RZaUlHTjVQU0k1TmlJZ2NqMGlOVElpSUdacGJHdzlJbTV2Ym1VaUlITjBjbTlyWlQwaUkyWTJZemt3WlNJZ2MzUnliMnRsTFhkcFpIUm9QU0kySWk4K0NpQWdQR1ZzYkdsd2MyVWdZM2c5SWprMklpQmplVDBpT1RZaUlISjRQU0l5T0NJZ2NuazlJalV5SWlCbWFXeHNQU0p1YjI1bElpQnpkSEp2YTJVOUlpTm1ObU01TUdVaUlITjBjbTlyWlMxM2FXUjBhRDBpTmlJdlBnb2dJRHhzYVc1bElIZ3hQU0kwTkNJZ2VURTlJamsySWlCNE1qMGlNVFE0SWlCNU1qMGlPVFlpSUhOMGNtOXJaVDBpSTJZMll6a3daU0lnYzNSeWIydGxMWGRwWkhSb1BTSTJJaTgrQ2lBZ1BHeHBibVVnZURFOUlqazJJaUI1TVQwaU5EUWlJSGd5UFNJNU5pSWdlVEk5SWpFME9DSWdjM1J5YjJ0bFBTSWpaalpqT1RCbElpQnpkSEp2YTJVdGQybGtkR2c5SWpZaUx6NEtJQ0E4Wld4c2FYQnpaU0JqZUQwaU9UWWlJR041UFNJNU5pSWdjbmc5SWpVeUlpQnllVDBpTWpnaUlHWnBiR3c5SW01dmJtVWlJSE4wY205clpUMGlJMlkyWXprd1pTSWdjM1J5YjJ0bExYZHBaSFJvUFNJMElpQnpkSEp2YTJVdFpHRnphR0Z5Y21GNVBTSXdJaTgrQ2lBZ1BHeHBibVVnZURFOUlqUTVJaUI1TVQwaU56QWlJSGd5UFNJeE5ETWlJSGt5UFNJM01DSWdjM1J5YjJ0bFBTSWpaalpqT1RCbElpQnpkSEp2YTJVdGQybGtkR2c5SWpNdU5TSWdjM1J5YjJ0bExXeHBibVZqWVhBOUluSnZkVzVrSWk4K0NpQWdQR3hwYm1VZ2VERTlJalE1SWlCNU1UMGlNVEl5SWlCNE1qMGlNVFF6SWlCNU1qMGlNVEl5SWlCemRISnZhMlU5SWlObU5tTTVNR1VpSUhOMGNtOXJaUzEzYVdSMGFEMGlNeTQxSWlCemRISnZhMlV0YkdsdVpXTmhjRDBpY205MWJtUWlMejRLUEM5emRtYysiLAogICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLAogICAgICAicHVycG9zZSI6ICJhbnkiCiAgICB9LAogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0F4T1RJZ01Ua3lJajRLSUNBOGNtVmpkQ0IzYVdSMGFEMGlNVGt5SWlCb1pXbG5hSFE5SWpFNU1pSWdjbmc5SWpNNElpQm1hV3hzUFNJak1HWXdaVEUzSWk4K0NpQWdQR05wY21Oc1pTQmplRDBpT1RZaUlHTjVQU0k1TmlJZ2NqMGlOVElpSUdacGJHdzlJbTV2Ym1VaUlITjBjbTlyWlQwaUkyWTJZemt3WlNJZ2MzUnliMnRsTFhkcFpIUm9QU0kySWk4K0NpQWdQR1ZzYkdsd2MyVWdZM2c5SWprMklpQmplVDBpT1RZaUlISjRQU0l5T0NJZ2NuazlJalV5SWlCbWFXeHNQU0p1YjI1bElpQnpkSEp2YTJVOUlpTm1ObU01TUdVaUlITjBjbTlyWlMxM2FXUjBhRDBpTmlJdlBnb2dJRHhzYVc1bElIZ3hQU0kwTkNJZ2VURTlJamsySWlCNE1qMGlNVFE0SWlCNU1qMGlPVFlpSUhOMGNtOXJaVDBpSTJZMll6a3daU0lnYzNSeWIydGxMWGRwWkhSb1BTSTJJaTgrQ2lBZ1BHeHBibVVnZURFOUlqazJJaUI1TVQwaU5EUWlJSGd5UFNJNU5pSWdlVEk5SWpFME9DSWdjM1J5YjJ0bFBTSWpaalpqT1RCbElpQnpkSEp2YTJVdGQybGtkR2c5SWpZaUx6NEtJQ0E4Wld4c2FYQnpaU0JqZUQwaU9UWWlJR041UFNJNU5pSWdjbmc5SWpVeUlpQnllVDBpTWpnaUlHWnBiR3c5SW01dmJtVWlJSE4wY205clpUMGlJMlkyWXprd1pTSWdjM1J5YjJ0bExYZHBaSFJvUFNJMElpQnpkSEp2YTJVdFpHRnphR0Z5Y21GNVBTSXdJaTgrQ2lBZ1BHeHBibVVnZURFOUlqUTVJaUI1TVQwaU56QWlJSGd5UFNJeE5ETWlJSGt5UFNJM01DSWdjM1J5YjJ0bFBTSWpaalpqT1RCbElpQnpkSEp2YTJVdGQybGtkR2c5SWpNdU5TSWdjM1J5YjJ0bExXeHBibVZqWVhBOUluSnZkVzVrSWk4K0NpQWdQR3hwYm1VZ2VERTlJalE1SWlCNU1UMGlNVEl5SWlCNE1qMGlNVFF6SWlCNU1qMGlNVEl5SWlCemRISnZhMlU5SWlObU5tTTVNR1VpSUhOMGNtOXJaUzEzYVdSMGFEMGlNeTQxSWlCemRISnZhMlV0YkdsdVpXTmhjRDBpY205MWJtUWlMejRLUEM5emRtYysiLAogICAgICAic2l6ZXMiOiAiYW55IiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsCiAgICAgICJwdXJwb3NlIjogIm1hc2thYmxlIgogICAgfQogIF0sCiAgInByZWZlcl9yZWxhdGVkX2FwcGxpY2F0aW9ucyI6IGZhbHNlCn0=">
+<meta name="theme-color" content="#0f0e17">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="LinguaQuest">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj4KICA8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjM4IiBmaWxsPSIjMGYwZTE3Ii8+CiAgPGNpcmNsZSBjeD0iOTYiIGN5PSI5NiIgcj0iNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y2YzkwZSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CiAgPGVsbGlwc2UgY3g9Ijk2IiBjeT0iOTYiIHJ4PSIyOCIgcnk9IjUyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmNmM5MGUiIHN0cm9rZS13aWR0aD0iNiIvPgogIDxsaW5lIHgxPSI0NCIgeTE9Ijk2IiB4Mj0iMTQ4IiB5Mj0iOTYiIHN0cm9rZT0iI2Y2YzkwZSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CiAgPGxpbmUgeDE9Ijk2IiB5MT0iNDQiIHgyPSI5NiIgeTI9IjE0OCIgc3Ryb2tlPSIjZjZjOTBlIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8ZWxsaXBzZSBjeD0iOTYiIGN5PSI5NiIgcng9IjUyIiByeT0iMjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y2YzkwZSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtZGFzaGFycmF5PSIwIi8+CiAgPGxpbmUgeDE9IjQ5IiB5MT0iNzAiIHgyPSIxNDMiIHkyPSI3MCIgc3Ryb2tlPSIjZjZjOTBlIiBzdHJva2Utd2lkdGg9IjMuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjQ5IiB5MT0iMTIyIiB4Mj0iMTQzIiB5Mj0iMTIyIiBzdHJva2U9IiNmNmM5MGUiIHN0cm9rZS13aWR0aD0iMy41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+">
+<meta name="description" content="Do básico à fluência — no seu ritmo">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0e17;
+    --surface: #1a1828;
+    --surface2: #232136;
+    --accent: #f6c90e;
+    --accent2: #ff6b6b;
+    --accent3: #4ecdc4;
+    --accent4: #a855f7;
+    --text: #fffffe;
+    --text-muted: #a7a9be;
+    --success: #06d6a0;
+    --danger: #ef233c;
+    --border: rgba(255,255,255,0.08);
+    --radius: 16px;
+    --shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  .screen { display:none; flex-direction:column; min-height:100vh; }
+  .screen.active { display:flex; }
+
+  /* ── SPLASH ── */
+  #splash {
+    align-items:center; justify-content:center;
+    background: radial-gradient(ellipse at 50% 30%, #2d1b69 0%, #0f0e17 70%);
+    padding: 40px 24px;
+    text-align:center;
+    overflow-y:auto;
+  }
+  .splash-icon { font-size: 72px; margin-bottom: 8px; animation: float 3s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  .splash-title {
+    font-family:'Fredoka One',cursive;
+    font-size:44px; color:var(--accent); letter-spacing:1px; line-height:1;
+    text-shadow: 0 0 40px rgba(246,201,14,0.5);
+  }
+  .splash-sub { font-size:14px; color:var(--text-muted); margin:8px 0 24px; }
+
+  /* Name input */
+  .name-section { width:100%; margin-bottom:20px; }
+  .name-section label { display:block; font-size:12px; font-weight:800; letter-spacing:1px; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px; text-align:left; }
+  .name-input {
+    width:100%; padding:14px 16px; border-radius:var(--radius);
+    background:var(--surface2); border:2px solid var(--border);
+    color:var(--text); font-family:'Nunito',sans-serif; font-size:16px; font-weight:700;
+    outline:none; transition:border .15s;
+  }
+  .name-input:focus { border-color:var(--accent4); }
+  .name-input::placeholder { color:var(--text-muted); }
+
+  /* Language picker */
+  .lang-section { width:100%; margin-bottom:28px; }
+  .lang-section label { display:block; font-size:12px; font-weight:800; letter-spacing:1px; color:var(--text-muted); text-transform:uppercase; margin-bottom:12px; text-align:left; }
+  .lang-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .lang-card {
+    padding:14px 10px; border-radius:var(--radius); background:var(--surface2);
+    border:2px solid var(--border); cursor:pointer; text-align:center;
+    transition:all .15s; display:flex; flex-direction:column; align-items:center; gap:6px;
+  }
+  .lang-card:active { transform:scale(0.96); }
+  .lang-card.selected { border-color:var(--accent); background:rgba(246,201,14,.12); }
+  .lang-card .lang-flag { font-size:28px; }
+  .lang-card .lang-name { font-size:13px; font-weight:800; }
+  .lang-card .lang-sub { font-size:10px; color:var(--text-muted); }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    padding:16px 24px; border-radius:var(--radius); border:none;
+    font-family:'Nunito',sans-serif; font-size:16px; font-weight:800;
+    cursor:pointer; transition:all .15s; width:100%;
+  }
+  .btn-primary { background:var(--accent); color:#0f0e17; }
+  .btn-primary:active { transform:scale(0.97); filter:brightness(0.9); }
+  .btn-secondary { background:var(--surface2); color:var(--text); border:1px solid var(--border); }
+  .btn-secondary:active { transform:scale(0.97); }
+  .btn-danger { background:var(--danger); color:white; }
+  .btn-success { background:var(--success); color:#0f0e17; }
+
+  /* ── HOME ── */
+  #home { padding:0; }
+  .home-header {
+    padding:20px 20px 16px;
+    background: linear-gradient(180deg, #1a1828 0%, transparent 100%);
+  }
+  .home-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+  .user-greeting { font-size:13px; color:var(--text-muted); }
+  .user-name { font-size:20px; font-weight:900; color:var(--text); }
+  .streak-badge {
+    display:flex; align-items:center; gap:6px;
+    background:rgba(246,201,14,0.15); border:1px solid rgba(246,201,14,0.3);
+    padding:8px 14px; border-radius:50px; font-size:14px; font-weight:800; color:var(--accent);
+  }
+  .lang-badge {
+    display:inline-flex; align-items:center; gap:6px;
+    background:rgba(168,85,247,.15); border:1px solid rgba(168,85,247,.3);
+    padding:5px 12px; border-radius:50px; font-size:13px; font-weight:800; color:var(--accent4);
+    margin-bottom:12px; cursor:pointer;
+  }
+  
+  .xp-bar-wrap { margin-bottom:4px; }
+  .xp-label { display:flex; justify-content:space-between; font-size:11px; color:var(--text-muted); margin-bottom:6px; }
+  .xp-bar { height:8px; background:var(--surface2); border-radius:50px; overflow:hidden; }
+  .xp-fill { height:100%; background:linear-gradient(90deg,var(--accent4),var(--accent)); border-radius:50px; transition:width 0.6s ease; }
+
+  .level-row { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+  .level-badge {
+    background:var(--accent4); color:white; font-size:11px; font-weight:900;
+    padding:4px 12px; border-radius:50px; letter-spacing:.5px;
+  }
+  .level-title { font-size:13px; color:var(--text-muted); }
+
+  .section-title { font-size:12px; font-weight:800; letter-spacing:1.5px; color:var(--text-muted); text-transform:uppercase; padding:0 20px 10px; }
+  
+  .module-scroll { display:flex; gap:12px; padding:0 20px 20px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  .module-scroll::-webkit-scrollbar { display:none; }
+  
+  .module-card {
+    flex-shrink:0; width:160px; border-radius:var(--radius); padding:16px;
+    background:var(--surface2); border:1px solid var(--border); scroll-snap-align:start;
+    cursor:pointer; transition:all .2s; position:relative; overflow:hidden;
+  }
+  .module-card:active { transform:scale(0.96); }
+  .module-card.locked { opacity:0.5; }
+  .module-card::before {
+    content:''; position:absolute; inset:0; opacity:0.08; pointer-events:none;
+    background: radial-gradient(circle at 80% 20%, white 0%, transparent 70%);
+  }
+  .module-icon { font-size:32px; margin-bottom:10px; }
+  .module-name { font-size:14px; font-weight:800; margin-bottom:4px; }
+  .module-desc { font-size:11px; color:var(--text-muted); line-height:1.4; margin-bottom:10px; }
+  .module-stars { display:flex; gap:3px; }
+  .module-stars span { font-size:14px; }
+  .module-stars span.empty { filter:grayscale(1); opacity:.3; }
+  .module-time { font-size:10px; color:var(--text-muted); margin-top:6px; }
+  .module-done { position:absolute; top:10px; right:10px; font-size:18px; }
+
+  .mc-vocab { border-color:rgba(168,85,247,.4); }
+  .mc-listen { border-color:rgba(78,205,196,.4); }
+  .mc-write { border-color:rgba(255,107,107,.4); }
+  .mc-speak { border-color:rgba(6,214,160,.4); }
+  .mc-grammar { border-color:rgba(246,201,14,.4); }
+
+  .stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; padding:0 20px 20px; }
+  .stat-box {
+    background:var(--surface2); border-radius:12px; padding:12px 8px; text-align:center; border:1px solid var(--border);
+  }
+  .stat-num { font-size:22px; font-weight:900; }
+  .stat-label { font-size:10px; color:var(--text-muted); margin-top:2px; }
+
+  .bottom-nav {
+    position:fixed; bottom:0; left:50%; transform:translateX(-50%);
+    width:100%; max-width:430px; background:var(--surface);
+    border-top:1px solid var(--border); display:grid; grid-template-columns:repeat(4,1fr);
+    padding:8px 0 calc(8px + env(safe-area-inset-bottom));
+    z-index:100;
+  }
+  .nav-btn { display:flex; flex-direction:column; align-items:center; gap:3px; padding:8px; cursor:pointer; border:none; background:none; }
+  .nav-btn span:first-child { font-size:22px; }
+  .nav-btn span:last-child { font-size:9px; color:var(--text-muted); font-weight:700; letter-spacing:.5px; text-transform:uppercase; }
+  .nav-btn.active span:last-child { color:var(--accent); }
+
+  /* ── EXERCISE SCREEN ── */
+  #exercise { padding:0; }
+  .ex-header {
+    padding:16px 20px 12px; display:flex; align-items:center; gap:12px;
+    background:var(--surface);
+    border-bottom:1px solid var(--border);
+  }
+  .ex-back { font-size:22px; cursor:pointer; padding:4px; }
+  .ex-progress-wrap { flex:1; }
+  .ex-progress-bar { height:8px; background:var(--surface2); border-radius:50px; overflow:hidden; }
+  .ex-progress-fill { height:100%; background:var(--accent); border-radius:50px; transition:width .4s; }
+  .ex-lives { display:flex; gap:4px; font-size:18px; }
+
+  .ex-body { flex:1; padding:20px; display:flex; flex-direction:column; gap:20px; overflow-y:auto; padding-bottom:120px; }
+  .ex-module-tag { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; background:var(--surface2); padding:5px 12px; border-radius:50px; color:var(--text-muted); width:fit-content; }
+  .ex-question { font-size:22px; font-weight:900; line-height:1.35; }
+  .ex-question .en { color:var(--accent3); }
+  .ex-context { font-size:13px; color:var(--text-muted); margin-top:-10px; line-height:1.6; }
+
+  .audio-btn {
+    display:flex; align-items:center; gap:10px; padding:14px 18px;
+    background:var(--surface2); border:2px solid var(--accent3); border-radius:var(--radius);
+    cursor:pointer; font-size:15px; font-weight:700; color:var(--accent3); width:fit-content;
+    transition:all .15s; user-select:none;
+  }
+  .audio-btn:active { background:rgba(78,205,196,.15); transform:scale(0.97); }
+  .audio-btn.speaking { background:rgba(78,205,196,.2); border-color:var(--success); color:var(--success); }
+  .audio-btn .pulse { width:12px; height:12px; background:currentColor; border-radius:50%; animation:pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.3);opacity:.7} }
+
+  .options-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .option-btn {
+    padding:16px 12px; border-radius:var(--radius); background:var(--surface2);
+    border:2px solid var(--border); cursor:pointer; font-size:14px; font-weight:700;
+    color:var(--text); text-align:center; line-height:1.4; transition:all .15s;
+  }
+  .option-btn:active { transform:scale(0.97); }
+  .option-btn.selected { border-color:var(--accent4); background:rgba(168,85,247,.15); }
+  .option-btn.correct { border-color:var(--success); background:rgba(6,214,160,.15); color:var(--success); }
+  .option-btn.wrong { border-color:var(--danger); background:rgba(239,35,60,.15); color:var(--danger); }
+
+  .text-input {
+    width:100%; padding:16px; border-radius:var(--radius);
+    background:var(--surface2); border:2px solid var(--border);
+    color:var(--text); font-family:'Nunito',sans-serif; font-size:16px;
+    outline:none; resize:none; min-height:100px; transition:border .15s;
+  }
+  .text-input:focus { border-color:var(--accent4); }
+  .text-input::placeholder { color:var(--text-muted); }
+
+  .word-bank { display:flex; flex-wrap:wrap; gap:8px; }
+  .word-chip {
+    padding:8px 14px; background:var(--surface2); border:2px solid var(--border);
+    border-radius:50px; font-size:13px; font-weight:700; cursor:pointer;
+    transition:all .15s; color:var(--text);
+  }
+  .word-chip:active { transform:scale(0.95); }
+  .word-chip.selected { background:var(--accent4); border-color:var(--accent4); color:white; opacity:0.5; }
+  .sentence-build {
+    min-height:56px; border-radius:var(--radius); border:2px dashed var(--border);
+    padding:12px; display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+  }
+  .sentence-build .word-chip { border-color:var(--accent4); background:rgba(168,85,247,.2); }
+
+  .feedback-bar {
+    position:fixed; bottom:0; left:50%; transform:translateX(-50%);
+    width:100%; max-width:430px; padding:20px;
+    border-top:3px solid; display:flex; flex-direction:column; gap:12px;
+    transition:transform .3s; z-index:200;
+  }
+  .feedback-bar.hidden { transform:translateY(100%); }
+  .feedback-bar.correct-fb { background:rgba(6,214,160,.12); border-color:var(--success); }
+  .feedback-bar.wrong-fb { background:rgba(239,35,60,.12); border-color:var(--danger); }
+  .fb-title { font-size:18px; font-weight:900; }
+  .correct-fb .fb-title { color:var(--success); }
+  .wrong-fb .fb-title { color:var(--danger); }
+  .fb-answer { font-size:13px; color:var(--text-muted); }
+
+  #progress-screen { padding:0; }
+  .progress-header { padding:24px 20px 16px; }
+  .progress-header h2 { font-size:24px; font-weight:900; margin-bottom:4px; }
+  .progress-header p { font-size:13px; color:var(--text-muted); }
+  .path-container { padding:0 20px 100px; display:flex; flex-direction:column; align-items:center; gap:0; }
+  .path-unit {
+    display:flex; flex-direction:column; align-items:center; width:100%;
+    border-left:3px dashed var(--border); margin-left:20px; padding:0 0 0 28px;
+    padding-bottom:8px;
+  }
+  .path-unit:last-child { border-color:transparent; }
+  .path-node {
+    width:56px; height:56px; border-radius:50%; border:3px solid;
+    display:flex; align-items:center; justify-content:center; font-size:22px;
+    margin-left:-44px; margin-bottom:12px; background:var(--surface2);
+    cursor:pointer; transition:all .2s; flex-shrink:0;
+  }
+  .path-node.done { border-color:var(--success); background:rgba(6,214,160,.15); }
+  .path-node.active { border-color:var(--accent); background:rgba(246,201,14,.15); box-shadow:0 0 20px rgba(246,201,14,.3); animation:glow .8s alternate infinite; }
+  .path-node.locked { border-color:var(--border); opacity:.4; cursor:default; }
+  @keyframes glow { to{ box-shadow:0 0 28px rgba(246,201,14,.5); } }
+  .path-info { width:100%; padding:0 0 20px 0; }
+  .path-info h3 { font-size:16px; font-weight:800; margin-bottom:2px; }
+  .path-info p { font-size:12px; color:var(--text-muted); }
+
+  #profile-screen { padding:0; }
+  .profile-header { padding:32px 20px 24px; text-align:center; background:radial-gradient(ellipse at 50% 0%,#2d1b69,transparent 70%); }
+  .avatar { width:80px; height:80px; background:var(--accent4); border-radius:50%; margin:0 auto 12px; display:flex; align-items:center; justify-content:center; font-size:36px; border:3px solid var(--accent); }
+  .profile-name { font-size:22px; font-weight:900; }
+  .profile-level { font-size:13px; color:var(--accent); margin-top:2px; }
+  .achievements { padding:20px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .ach-card {
+    background:var(--surface2); border:1px solid var(--border); border-radius:12px;
+    padding:14px 10px; text-align:center;
+  }
+  .ach-icon { font-size:28px; margin-bottom:4px; }
+  .ach-name { font-size:10px; font-weight:800; color:var(--text-muted); }
+  .ach-card.earned { border-color:var(--accent); }
+  .ach-card.earned .ach-name { color:var(--accent); }
+  .stat-section { padding:0 20px 100px; display:flex; flex-direction:column; gap:12px; }
+  .stat-row-full { background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius); padding:16px; display:flex; justify-content:space-between; align-items:center; }
+  .stat-row-full label { font-size:13px; color:var(--text-muted); }
+  .stat-row-full strong { font-size:18px; font-weight:900; color:var(--accent3); }
+
+  #result-screen {
+    align-items:center; justify-content:center; padding:24px;
+    background:radial-gradient(ellipse at 50% 30%,#2d1b69,#0f0e17 70%);
+  }
+  .result-emoji { font-size:80px; animation:bounce .6s cubic-bezier(0.36,0.07,0.19,0.97) both; }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 30%{transform:translateY(-30px)} 60%{transform:translateY(-15px)} }
+  .result-title { font-size:32px; font-weight:900; margin:16px 0 4px; }
+  .result-sub { font-size:14px; color:var(--text-muted); margin-bottom:24px; }
+  .result-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; width:100%; margin-bottom:28px; }
+  .result-stat { background:var(--surface2); border-radius:12px; padding:16px 8px; text-align:center; }
+  .result-stat .num { font-size:26px; font-weight:900; color:var(--accent); }
+  .result-stat .lbl { font-size:10px; color:var(--text-muted); margin-top:2px; }
+  .result-btns { display:flex; flex-direction:column; gap:10px; width:100%; }
+
+  .confetti-wrap { position:fixed; inset:0; pointer-events:none; z-index:999; }
+  .confetti-piece {
+    position:absolute; width:10px; height:10px; border-radius:2px;
+    animation: confettiFall 2s ease-in forwards;
+  }
+  @keyframes confettiFall {
+    0%{transform:translateY(-20px) rotate(0deg);opacity:1}
+    100%{transform:translateY(100vh) rotate(720deg);opacity:0}
+  }
+
+  .toast {
+    position:fixed; top:20px; left:50%; transform:translateX(-50%) translateY(-80px);
+    background:var(--surface2); border:1px solid var(--border); border-radius:50px;
+    padding:10px 20px; font-size:14px; font-weight:700; z-index:999;
+    transition:transform .3s cubic-bezier(0.34,1.56,0.64,1);
+    white-space:nowrap;
+  }
+  .toast.show { transform:translateX(-50%) translateY(0); }
+  .toast.xp { border-color:var(--accent); color:var(--accent); }
+
+  .home-scroll { overflow-y:auto; flex:1; padding-bottom:80px; }
+
+  .tip-card { margin:0 20px 20px; background:rgba(78,205,196,.08); border:1px solid rgba(78,205,196,.2); border-radius:var(--radius); padding:14px 16px; display:flex; gap:12px; align-items:flex-start; }
+  .tip-card .tip-icon { font-size:22px; flex-shrink:0; }
+  .tip-card p { font-size:13px; color:var(--accent3); line-height:1.6; }
+  .tip-card strong { color:white; }
+
+  /* ── LANGUAGE SWITCH MODAL ── */
+  .modal-overlay {
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:500;
+    align-items:flex-end; justify-content:center;
+  }
+  .modal-overlay.open { display:flex; }
+  .modal-sheet {
+    background:var(--surface); border-radius:20px 20px 0 0; width:100%; max-width:430px;
+    padding:24px; border-top:1px solid var(--border);
+  }
+  .modal-sheet h3 { font-size:18px; font-weight:900; margin-bottom:16px; }
+</style>
+</head>
+<body>
+
+<!-- SPLASH / ONBOARDING -->
+<div class="screen active" id="splash">
+  <div class="splash-icon">🌎</div>
+  <div class="splash-title">LinguaQuest</div>
+  <div class="splash-sub">Do básico à fluência — no seu ritmo</div>
+
+  <div class="name-section">
+    <label>Seu nome</label>
+    <input class="name-input" id="nameInput" type="text" placeholder="Como posso te chamar?" maxlength="30" autocomplete="off">
+  </div>
+
+  <div class="lang-section">
+    <label>Escolha o idioma para estudar</label>
+    <div class="lang-grid" id="langGrid">
+      <div class="lang-card selected" data-lang="en" onclick="selectLang(this)">
+        <div class="lang-flag">🇺🇸</div>
+        <div class="lang-name">Inglês</div>
+        <div class="lang-sub">Americano</div>
+      </div>
+      <div class="lang-card" data-lang="es" onclick="selectLang(this)">
+        <div class="lang-flag">🇪🇸</div>
+        <div class="lang-name">Espanhol</div>
+        <div class="lang-sub">Latino / Espanha</div>
+      </div>
+      <div class="lang-card" data-lang="fr" onclick="selectLang(this)">
+        <div class="lang-flag">🇫🇷</div>
+        <div class="lang-name">Francês</div>
+        <div class="lang-sub">Paris & além</div>
+      </div>
+      <div class="lang-card" data-lang="de" onclick="selectLang(this)">
+        <div class="lang-flag">🇩🇪</div>
+        <div class="lang-name">Alemão</div>
+        <div class="lang-sub">Hochdeutsch</div>
+      </div>
+      <div class="lang-card" data-lang="hi" onclick="selectLang(this)">
+        <div class="lang-flag">🇮🇳</div>
+        <div class="lang-name">Hindi</div>
+        <div class="lang-sub">Devanagari</div>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" onclick="startApp()">🚀 Começar Agora</button>
+</div>
+
+<!-- HOME -->
+<div class="screen" id="home">
+  <div class="home-header">
+    <div class="home-top">
+      <div>
+        <div class="user-greeting" id="homeGreeting">Bom dia,</div>
+        <div class="user-name" id="homeUserName">— 👋</div>
+      </div>
+      <div class="streak-badge">🔥 <span id="streakCount">1</span> dias</div>
+    </div>
+    <div class="lang-badge" id="langBadge" onclick="openLangModal()">🌍 <span id="currentLangLabel">English</span> ▾</div>
+    <div class="level-row">
+      <div class="level-badge">LV <span id="levelNum">1</span></div>
+      <div class="level-title" id="levelTitle">Beginner</div>
+    </div>
+    <div class="xp-bar-wrap">
+      <div class="xp-label"><span>XP: <b id="xpCurrent">0</b></span><span id="xpNext">100 para LV 2</span></div>
+      <div class="xp-bar"><div class="xp-fill" id="xpBar" style="width:0%"></div></div>
+    </div>
+  </div>
+  <div class="home-scroll">
+    <div class="tip-card">
+      <div class="tip-icon">💡</div>
+      <p id="dailyTip">Carregando dica...</p>
+    </div>
+    <div class="section-title">Lição do Dia</div>
+    <div class="module-scroll" id="moduleList"></div>
+    <div class="section-title">Seu Progresso</div>
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-num" style="color:var(--accent)"><span id="totalXP">0</span></div><div class="stat-label">XP Total</div></div>
+      <div class="stat-box"><div class="stat-num" style="color:var(--accent3)"><span id="lessonsCount">0</span></div><div class="stat-label">Lições</div></div>
+      <div class="stat-box"><div class="stat-num" style="color:var(--accent2)"><span id="accuracyNum">—</span></div><div class="stat-label">Precisão</div></div>
+    </div>
+  </div>
+  <div class="bottom-nav">
+    <button class="nav-btn active" onclick="showTab('home')"><span>🏠</span><span>Início</span></button>
+    <button class="nav-btn" onclick="showTab('progress')"><span>🗺️</span><span>Trilha</span></button>
+    <button class="nav-btn" onclick="showTab('profile')"><span>👤</span><span>Perfil</span></button>
+    <button class="nav-btn" onclick="startRandomLesson()"><span>⚡</span><span>Praticar</span></button>
+  </div>
+</div>
+
+<!-- EXERCISE -->
+<div class="screen" id="exercise">
+  <div class="ex-header">
+    <div class="ex-back" onclick="confirmBack()">✕</div>
+    <div class="ex-progress-wrap">
+      <div class="xp-label"><span id="exStep">1/8</span></div>
+      <div class="ex-progress-bar"><div class="ex-progress-fill" id="exProgressFill" style="width:0%"></div></div>
+    </div>
+    <div class="ex-lives" id="exLives"></div>
+  </div>
+  <div class="ex-body" id="exBody"></div>
+  <div class="feedback-bar hidden" id="feedbackBar">
+    <div class="fb-title" id="fbTitle"></div>
+    <div class="fb-answer" id="fbAnswer"></div>
+    <button class="btn btn-primary" id="fbNext" onclick="nextQuestion()">CONTINUAR</button>
+  </div>
+</div>
+
+<!-- RESULT -->
+<div class="screen" id="result-screen">
+  <div class="result-emoji" id="resultEmoji">🏆</div>
+  <div class="result-title" id="resultTitle">Incrível!</div>
+  <div class="result-sub" id="resultSub">Você completou a lição</div>
+  <div class="result-stats">
+    <div class="result-stat"><div class="num" id="resXP">+0</div><div class="lbl">XP</div></div>
+    <div class="result-stat"><div class="num" id="resCorrect">0</div><div class="lbl">Certas</div></div>
+    <div class="result-stat"><div class="num" id="resAccuracy">0%</div><div class="lbl">Precisão</div></div>
+  </div>
+  <div class="result-btns">
+    <button class="btn btn-primary" onclick="goHome()">🏠 Ir para Início</button>
+    <button class="btn btn-secondary" onclick="replayLesson()">🔄 Repetir Lição</button>
+  </div>
+</div>
+
+<!-- PROGRESS MAP -->
+<div class="screen" id="progress-screen">
+  <div class="progress-header">
+    <h2>🗺️ Trilha de Aprendizado</h2>
+    <p id="progressLangLabel">Seu caminho do básico à fluência</p>
+  </div>
+  <div class="path-container" id="pathContainer"></div>
+  <div class="bottom-nav">
+    <button class="nav-btn" onclick="showTab('home')"><span>🏠</span><span>Início</span></button>
+    <button class="nav-btn active" onclick="showTab('progress')"><span>🗺️</span><span>Trilha</span></button>
+    <button class="nav-btn" onclick="showTab('profile')"><span>👤</span><span>Perfil</span></button>
+    <button class="nav-btn" onclick="startRandomLesson()"><span>⚡</span><span>Praticar</span></button>
+  </div>
+</div>
+
+<!-- PROFILE -->
+<div class="screen" id="profile-screen">
+  <div class="profile-header">
+    <div class="avatar">😎</div>
+    <div class="profile-name" id="profileName">—</div>
+    <div class="profile-level">🌟 <span id="profileLevel">Beginner</span></div>
+  </div>
+  <div class="achievements" id="achievements"></div>
+  <div class="stat-section" id="profileStats"></div>
+  <div class="bottom-nav">
+    <button class="nav-btn" onclick="showTab('home')"><span>🏠</span><span>Início</span></button>
+    <button class="nav-btn" onclick="showTab('progress')"><span>🗺️</span><span>Trilha</span></button>
+    <button class="nav-btn active" onclick="showTab('profile')"><span>👤</span><span>Perfil</span></button>
+    <button class="nav-btn" onclick="startRandomLesson()"><span>⚡</span><span>Praticar</span></button>
+  </div>
+</div>
+
+<!-- LANGUAGE SWITCH MODAL -->
+<div class="modal-overlay" id="langModal" onclick="closeLangModal(event)">
+  <div class="modal-sheet">
+    <h3>🌍 Trocar Idioma</h3>
+    <div class="lang-grid" id="modalLangGrid">
+      <div class="lang-card" data-lang="en" onclick="switchLang('en')"><div class="lang-flag">🇺🇸</div><div class="lang-name">Inglês</div><div class="lang-sub">Americano</div></div>
+      <div class="lang-card" data-lang="es" onclick="switchLang('es')"><div class="lang-flag">🇪🇸</div><div class="lang-name">Espanhol</div><div class="lang-sub">Latino / Espanha</div></div>
+      <div class="lang-card" data-lang="fr" onclick="switchLang('fr')"><div class="lang-flag">🇫🇷</div><div class="lang-name">Francês</div><div class="lang-sub">Paris & além</div></div>
+      <div class="lang-card" data-lang="de" onclick="switchLang('de')"><div class="lang-flag">🇩🇪</div><div class="lang-name">Alemão</div><div class="lang-sub">Hochdeutsch</div></div>
+      <div class="lang-card" data-lang="hi" onclick="switchLang('hi')"><div class="lang-flag">🇮🇳</div><div class="lang-name">Hindi</div><div class="lang-sub">Devanagari</div></div>
+    </div>
+    <div style="height:12px"></div>
+    <button class="btn btn-secondary" onclick="closeLangModal()">Cancelar</button>
+  </div>
+</div>
+
+<!-- TOAST & CONFETTI -->
+<div class="toast" id="toast"></div>
+<div class="confetti-wrap" id="confettiWrap"></div>
+
+<script>
+// ══════════════════════════════════════════════════════
+// LANGUAGE CONFIG
+// ══════════════════════════════════════════════════════
+const LANG_CONFIG = {
+  en: { name:'English', label:'Inglês 🇺🇸', ttsLang:'en-US', ttsRate:0.85 },
+  es: { name:'Español', label:'Espanhol 🇪🇸', ttsLang:'es-ES', ttsRate:0.85 },
+  fr: { name:'Français', label:'Francês 🇫🇷', ttsLang:'fr-FR', ttsRate:0.85 },
+  de: { name:'Deutsch', label:'Alemão 🇩🇪', ttsLang:'de-DE', ttsRate:0.82 },
+  hi: { name:'हिंदी', label:'Hindi 🇮🇳', ttsLang:'hi-IN', ttsRate:0.82 },
+};
+
+const LEVELS = [
+  { name:'Beginner', xp:0 }, { name:'Elementary', xp:100 },
+  { name:'Pre-Intermediate', xp:250 }, { name:'Intermediate', xp:500 },
+  { name:'Upper-Intermediate', xp:900 }, { name:'Advanced', xp:1500 },
+  { name:'Fluent', xp:2500 }
+];
+
+const TIPS_BY_LANG = {
+  en: [
+    "💬 <strong>Tip:</strong> Repita palavras em voz alta — mesmo no ônibus, mova os lábios!",
+    "🎧 <strong>Tip:</strong> Podcasts como <em>VOA Learning English</em> são ótimos para listening.",
+    "🇺🇸 <strong>Tip:</strong> Americanos dizem <em>'gonna'</em> em vez de <em>'going to'</em> — é normal!",
+    "📱 <strong>Tip:</strong> Mude o idioma do celular para inglês — imersão passiva ajuda!",
+    "🧠 <strong>Tip:</strong> Aprenda frases completas, não só palavras isoladas."
+  ],
+  es: [
+    "💬 <strong>Tip:</strong> Pratique os verbos ser/estar — a diferença é fundamental!",
+    "🎧 <strong>Tip:</strong> Músicas de reggaeton e pop latino ajudam muito no vocabulário.",
+    "🇪🇸 <strong>Tip:</strong> <em>'Tú'</em> (informal) vs <em>'usted'</em> (formal) — saiba quando usar cada um.",
+    "📺 <strong>Tip:</strong> Assistir séries em espanhol com legendas acelera o aprendizado.",
+    "🧠 <strong>Tip:</strong> Os gêneros masculino/feminino mudam tudo — preste atenção!"
+  ],
+  fr: [
+    "💬 <strong>Tip:</strong> O francês falado é bem diferente do escrito — pratique o áudio!",
+    "🎵 <strong>Tip:</strong> Chanson française é ótima para aprender pronúncia e vocabulário.",
+    "🇫🇷 <strong>Tip:</strong> Liaison (liação) conecta palavras — ex: <em>'les amis'</em> soa 'lezami'.",
+    "📖 <strong>Tip:</strong> Gênero das palavras em francês é difícil — aprenda com contexto.",
+    "🧠 <strong>Tip:</strong> <em>'Tu'</em> vs <em>'vous'</em> — saiba a diferença de registro!"
+  ],
+  de: [
+    "💬 <strong>Tip:</strong> Os casos (Nominativ, Akkusativ, Dativ) mudam os artigos — foque nisso!",
+    "🔤 <strong>Tip:</strong> Substantivos alemães têm gênero der/die/das — memorize com a palavra.",
+    "🇩🇪 <strong>Tip:</strong> Verbos vão para o fim em orações subordinadas — é a regra!",
+    "🎵 <strong>Tip:</strong> Rammstein e bandas alemãs ajudam a treinar a pronúncia.",
+    "🧠 <strong>Tip:</strong> O alemão é lógico — palavras compostas descrevem tudo!"
+  ],
+  hi: [
+    "💬 <strong>Tip:</strong> O devanagari tem 47 letras — comece com as mais comuns.",
+    "🎵 <strong>Tip:</strong> Filmes e músicas de Bollywood são ótimos para aprender hindi!",
+    "🇮🇳 <strong>Tip:</strong> Hindi e Urdu compartilham base — palavras cognatas existem.",
+    "📖 <strong>Tip:</strong> Gênero (masculino/feminino) afeta verbos em hindi — importante!",
+    "🧠 <strong>Tip:</strong> Comece falando — o sotaque errado é melhor que o silêncio."
+  ]
+};
+
+const ACHIEVEMENTS = [
+  { icon:'🌟', name:'Primeira Lição', key:'lesson1' },
+  { icon:'🔥', name:'3 Dias Seguidos', key:'streak3' },
+  { icon:'💯', name:'100 XP', key:'xp100' },
+  { icon:'✍️', name:'Escritor', key:'write1' },
+  { icon:'🎧', name:'Ouvinte', key:'listen1' },
+  { icon:'🧠', name:'Gramático', key:'grammar1' },
+  { icon:'🍽️', name:'Gourmet', key:'food1' },
+  { icon:'✈️', name:'Viajante', key:'travel1' },
+  { icon:'💼', name:'Profissional', key:'work1' },
+  { icon:'🔢', name:'Numerista', key:'numbers1' },
+  { icon:'🏆', name:'500 XP', key:'xp500' },
+  { icon:'🎯', name:'10 Lições', key:'lessons10' },
+];
+
+// ══════════════════════════════════════════════════════
+// MODULES PER LANGUAGE
+// ══════════════════════════════════════════════════════
+const MODULES_BY_LANG = {
+
+// ─────────────── INGLÊS ───────────────
+en: [
+  {
+    id:'vocab1', name:'Essentials', icon:'📖', color:'mc-vocab',
+    desc:'Palavras fundamentais do dia a dia', time:'~15 min',
+    questions: [
+      { type:'translate-en', q:'O que significa <span class="en">"Hello"</span>?', options:['Tchau','Olá','Por favor','Obrigado'], answer:1, explanation:'"Hello" é a saudação mais comum em inglês americano.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Thank you"</span>?', options:['Desculpe','Por favor','Obrigado','De nada'], answer:2, explanation:'"Thank you" = obrigado. A resposta é "You\'re welcome".' },
+      { type:'translate-pt', q:'Como se diz <strong>"água"</strong> em inglês?', options:['Milk','Juice','Water','Food'], answer:2, explanation:'"Water" é uma das palavras mais usadas do inglês!' },
+      { type:'build', q:'Monte: <strong>"Meu nome é [seu nome]"</strong>', words:['am','My','name','is','Marco','the'], correct:['My','name','is','Marco'], explanation:'Estrutura: My name is [nome].' },
+      { type:'translate-pt', q:'Como se diz <strong>"trabalho"</strong> em inglês?', options:['House','Job','Car','School'], answer:1, explanation:'"Job" = emprego/trabalho.' },
+      { type:'translate-en', q:'O que significa <span class="en">"I\'m tired"</span>?', options:['Estou com fome','Estou cansado','Estou feliz','Estou com sede'], answer:1, explanation:'"Tired" = cansado.' },
+      { type:'build', q:'Monte: <strong>"Onde é o banheiro?"</strong>', words:['is','Where','bathroom','the','?','here'], correct:['Where','is','the','bathroom','?'], explanation:'"Where is the bathroom?" é essencial ao viajar.' },
+      { type:'translate-pt', q:'Como se diz <strong>"ônibus"</strong> em inglês?', options:['Train','Subway','Bus','Car'], answer:2, explanation:'"Bus" = ônibus.' },
+      { type:'build', q:'Monte: <strong>"Eu estou bem"</strong>', words:["I'm","am","fine","good","I","very"], correct:["I'm","fine"], explanation:'"I\'m fine" ou "I\'m good" — ambas são usadas.' },
+      { type:'translate-en', q:'O que significa <span class="en">"See you later"</span>?', options:['Olá de novo','Até mais','Boa noite','Com licença'], answer:1, explanation:'"See you later" = até mais.' },
+      { type:'translate-pt', q:'Como se diz <strong>"dinheiro"</strong> em inglês?', options:['Money','Bank','Coin','Card'], answer:0, explanation:'"Money" = dinheiro.' },
+      { type:'translate-en', q:'O que significa <span class="en">"I\'m sorry"</span>?', options:['Estou feliz','Me desculpe','Com licença','Obrigado'], answer:1, explanation:'"I\'m sorry" = me desculpe.' },
+      { type:'build', q:'Monte: <strong>"Eu não sei"</strong>', words:["I","don't","know","sure","am","not"], correct:["I","don't","know"], explanation:'"I don\'t know" = eu não sei.' },
+      { type:'translate-pt', q:'Como se diz <strong>"hoje"</strong> em inglês?', options:['Yesterday','Tomorrow','Today','Now'], answer:2, explanation:'"Today" = hoje.' },
+      { type:'build', q:'Monte: <strong>"Que horas são?"</strong>', words:['What','time','is','it','?','the','are'], correct:['What','time','is','it','?'], explanation:'"What time is it?" — essencial.' },
+    ]
+  },
+  {
+    id:'listen1', name:'Listening', icon:'🎧', color:'mc-listen',
+    desc:'Entenda o inglês falado', time:'~18 min',
+    questions: [
+      { type:'listen', q:'Você ouve: <span class="en">"What time is it?"</span>', ttsText:'What time is it?', options:['Qual seu nome?','Que horas são?','Onde fica?','Como vai?'], answer:1, explanation:'"What time is it?" = Que horas são?' },
+      { type:'listen', q:'Você ouve: <span class="en">"Can you help me, please?"</span>', ttsText:'Can you help me, please?', options:['Pode me ajudar?','Me deixe em paz.','Obrigado.','Você está bem?'], answer:0, explanation:'"Can you help me?" = Pode me ajudar?' },
+      { type:'listen', q:'Você ouve: <span class="en">"How much does it cost?"</span>', ttsText:'How much does it cost?', options:['Você gosta?','Qual o tamanho?','Quanto custa?','Tem desconto?'], answer:2, explanation:'"How much does it cost?" = Quanto custa?' },
+      { type:'listen', q:'Você ouve: <span class="en">"Nice to meet you!"</span>', ttsText:'Nice to meet you!', options:['Até logo!','Muito prazer!','Como vai?','Boa sorte!'], answer:1, explanation:'"Nice to meet you" ao conhecer alguém.' },
+      { type:'listen', q:'Você ouve: <span class="en">"I\'ll be right back"</span>', ttsText:"I'll be right back", options:['Já volto','Vou embora','Pode esperar?','Vou chegar tarde'], answer:0, explanation:'"I\'ll be right back" = já volto.' },
+      { type:'listen', q:'Você ouve: <span class="en">"It\'s on the left"</span>', ttsText:"It's on the left", options:['Fica à direita','Fica em frente','Fica à esquerda','Fica atrás'], answer:2, explanation:'"Left" = esquerda.' },
+      { type:'listen', q:'Você ouve: <span class="en">"Watch out!"</span>', ttsText:'Watch out!', options:['Olha que lindo!','Cuidado!','Preste atenção.','O que foi?'], answer:1, explanation:'"Watch out!" = cuidado!' },
+      { type:'listen', q:'Você ouve: <span class="en">"Could you speak more slowly?"</span>', ttsText:'Could you speak more slowly?', options:['Fale mais rápido','Fale mais alto','Fale mais devagar','Fale em inglês'], answer:2, explanation:'"Speak more slowly" = fale mais devagar.' },
+    ]
+  },
+  {
+    id:'write1', name:'Writing', icon:'✍️', color:'mc-write',
+    desc:'Monte frases e escreva em inglês', time:'~20 min',
+    questions: [
+      { type:'build', q:'Escreva: <strong>"Eu moro no Brasil"</strong>', words:['I','live','in','Brazil','work','from'], correct:['I','live','in','Brazil'], explanation:'"I live in Brazil" — Estrutura: I + live + in + lugar.' },
+      { type:'build', q:'Escreva: <strong>"Eu trabalho todos os dias"</strong>', words:['I','work','every','day','all','the'], correct:['I','work','every','day'], explanation:'"I work every day".' },
+      { type:'translate-pt', q:'Como se escreve <strong>"segunda-feira"</strong>?', options:['Sunday','Monday','Tuesday','Wednesday'], answer:1, explanation:'Monday = segunda.' },
+      { type:'build', q:'Escreva: <strong>"Eu preciso de ajuda"</strong>', words:['I','need','help','want','please','a'], correct:['I','need','help'], explanation:'"I need help" — curto e essencial.' },
+      { type:'build', q:'Escreva: <strong>"Ela está estudando agora"</strong>', words:["She's","studying","now","is","she","today"], correct:["She's","studying","now"], explanation:'"She\'s studying now".' },
+      { type:'build', q:'Escreva: <strong>"Pode me ajudar?"</strong>', words:["Can","you","help","me","?","Do","please"], correct:["Can","you","help","me","?"], explanation:'"Can you help me?"' },
+      { type:'build', q:'Escreva: <strong>"Eu estou aprendendo inglês"</strong>', words:["I'm","learning","English","study","am","now"], correct:["I'm","learning","English"], explanation:'"I\'m learning English" — diga para nativos!' },
+      { type:'translate-pt', q:'Como se diz <strong>"próxima semana"</strong>?', options:['Last week','This week','Next week','Every week'], answer:2, explanation:'"Next week" = próxima semana.' },
+    ]
+  },
+  {
+    id:'grammar1', name:'Grammar', icon:'📝', color:'mc-grammar',
+    desc:'Estruturas e regras do inglês', time:'~18 min',
+    questions: [
+      { type:'translate-en', q:'Qual a tradução de <span class="en">"She works every day"</span>?', options:['Ela trabalhou ontem','Ela vai trabalhar','Ela trabalha todo dia','Ela está trabalhando'], answer:2, explanation:'Simple present com she/he/it recebe -s.' },
+      { type:'translate-pt', q:'Qual é a forma correta?', options:["She don't like coffee","She doesn't like coffee","She not like coffee","She isn't like coffee"], answer:1, explanation:'Com she/he/it usamos "doesn\'t".' },
+      { type:'translate-en', q:'O que é <span class="en">"Did you eat?"</span>?', options:['Você vai comer?','Você comeu?','Você come?','Você estava comendo?'], answer:1, explanation:'"Did" indica passado.' },
+      { type:'translate-pt', q:'Como dizer <strong>"Eu tenho 25 anos"</strong>?', options:['I have 25 years','I am 25 years old','My age is 25','I\'ve 25 years'], answer:1, explanation:'Em inglês: "I am [número] years old".' },
+      { type:'build', q:'Monte: <strong>"Você gosta de música?"</strong>', words:['Do','you','like','music','?','Does','are'], correct:['Do','you','like','music','?'], explanation:'"Do you like...?" pergunta no simple present.' },
+      { type:'translate-pt', q:'Qual frase está no <strong>passado</strong>?', options:['I eat breakfast','I am eating breakfast','I ate breakfast','I will eat breakfast'], answer:2, explanation:'"I ate" = eu comi.' },
+      { type:'translate-en', q:'O que é <span class="en">"I\'ve already eaten"</span>?', options:['Vou comer logo','Eu já comi','Estou comendo','Comi ontem'], answer:1, explanation:'"Already" com Present Perfect = já.' },
+      { type:'translate-pt', q:'Qual é o plural correto de <strong>"child"</strong>?', options:['Childs','Childes','Children','Childrens'], answer:2, explanation:'"Children" é o plural irregular.' },
+    ]
+  },
+  {
+    id:'speak1', name:'Phrases', icon:'💬', color:'mc-speak',
+    desc:'Frases do cotidiano americano', time:'~15 min',
+    questions: [
+      { type:'translate-en', q:'Um americano diz <span class="en">"What\'s up?"</span>. O que quer dizer?', options:['O que está em cima?','E aí, como vai?','O que aconteceu?','Que horas são?'], answer:1, explanation:'"What\'s up?" = E aí?' },
+      { type:'listen', q:'Seu colega diz <span class="en">"I\'m gonna grab some coffee"</span>.', ttsText:"I'm gonna grab some coffee", options:['Pegar um táxi','Trabalhar mais','Tomar um café','Ligar para alguém'], answer:2, explanation:'"Gonna" = going to (informal).' },
+      { type:'translate-en', q:'O que significa <span class="en">"No worries!"</span>?', options:['Boa sorte!','Sem problemas!','Com licença!','Pode repetir?'], answer:1, explanation:'"No worries" = sem problemas.' },
+      { type:'translate-en', q:'O que significa <span class="en">"I\'m on my way"</span>?', options:['Estou perdido','Já estou a caminho','Não vou conseguir','Cheguei'], answer:1, explanation:'"I\'m on my way" = estou a caminho.' },
+      { type:'build', q:'Monte: <strong>"Podemos nos reunir amanhã?"</strong>', words:["Can","we","meet","tomorrow","?","Do","should"], correct:["Can","we","meet","tomorrow","?"], explanation:'"Can we meet tomorrow?".' },
+      { type:'translate-en', q:'O que significa <span class="en">"Hang in there!"</span>?', options:['Saia daqui!','Aguenta firme!','Volte mais tarde!','Espera!'], answer:1, explanation:'"Hang in there!" = aguenta firme!' },
+      { type:'translate-en', q:'O que significa <span class="en">"You\'re killing it!"</span>?', options:['Você está destruindo','Você está arrasando!','Cuidado!','Para com isso!'], answer:1, explanation:'"You\'re killing it!" = você está arrasando!' },
+      { type:'translate-en', q:'O que significa <span class="en">"Long time no see!"</span>?', options:['Não te vejo faz tempo!','Você está atrasado.','Saudades.','Que surpresa!'], answer:0, explanation:'"Long time no see!" = faz tempo que não te vejo!' },
+    ]
+  },
+],
+
+// ─────────────── ESPANHOL ───────────────
+es: [
+  {
+    id:'vocab1', name:'Esenciales', icon:'📖', color:'mc-vocab',
+    desc:'Palavras fundamentais em espanhol', time:'~15 min',
+    questions: [
+      { type:'translate-en', q:'O que significa <span class="en">"Hola"</span>?', options:['Tchau','Olá','Por favor','Obrigado'], answer:1, explanation:'"Hola" é a saudação mais comum em espanhol.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Gracias"</span>?', options:['Desculpe','Por favor','Obrigado','De nada'], answer:2, explanation:'"Gracias" = obrigado. A resposta é "De nada".' },
+      { type:'translate-pt', q:'Como se diz <strong>"água"</strong> em espanhol?', options:['Leche','Jugo','Agua','Comida'], answer:2, explanation:'"Agua" = água.' },
+      { type:'build', q:'Monte: <strong>"Me llamo [nome]"</strong>', words:['Me','llamo','Marco','Soy','yo','de'], correct:['Me','llamo','Marco'], explanation:'"Me llamo [nome]" = meu nome é [nome].' },
+      { type:'translate-pt', q:'Como se diz <strong>"trabalho"</strong> em espanhol?', options:['Casa','Trabajo','Coche','Escuela'], answer:1, explanation:'"Trabajo" = trabalho/emprego.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Estoy cansado"</span>?', options:['Estou com fome','Estou cansado','Estou feliz','Estou com sede'], answer:1, explanation:'"Cansado" = cansado.' },
+      { type:'build', q:'Monte: <strong>"¿Dónde está el baño?"</strong>', words:['¿Dónde','está','el','baño','?','aquí','la'], correct:['¿Dónde','está','el','baño','?'], explanation:'"¿Dónde está el baño?" = onde fica o banheiro?' },
+      { type:'translate-pt', q:'Como se diz <strong>"ônibus"</strong> em espanhol?', options:['Tren','Metro','Autobús','Coche'], answer:2, explanation:'"Autobús" = ônibus.' },
+      { type:'build', q:'Monte: <strong>"Estoy bien"</strong>', words:["Estoy","bien","muy","soy","yo","ahora"], correct:["Estoy","bien"], explanation:'"Estoy bien" = estou bem.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Hasta luego"</span>?', options:['Olá','Até mais','Boa noite','Com licença'], answer:1, explanation:'"Hasta luego" = até mais.' },
+      { type:'translate-pt', q:'Como se diz <strong>"dinheiro"</strong> em espanhol?', options:['Dinero','Banco','Moneda','Tarjeta'], answer:0, explanation:'"Dinero" = dinheiro.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Lo siento"</span>?', options:['Estou feliz','Me desculpe','Com licença','Obrigado'], answer:1, explanation:'"Lo siento" = me desculpe / sinto muito.' },
+      { type:'build', q:'Monte: <strong>"No sé"</strong>', words:["No","sé","lo","es","qué","yo"], correct:["No","sé"], explanation:'"No sé" = eu não sei.' },
+      { type:'translate-pt', q:'Como se diz <strong>"hoje"</strong> em espanhol?', options:['Ayer','Mañana','Hoy','Ahora'], answer:2, explanation:'"Hoy" = hoje.' },
+      { type:'build', q:'Monte: <strong>"¿Qué hora es?"</strong>', words:['¿Qué','hora','es','?','son','la'], correct:['¿Qué','hora','es','?'], explanation:'"¿Qué hora es?" = que horas são?' },
+    ]
+  },
+  {
+    id:'listen1', name:'Escuchar', icon:'🎧', color:'mc-listen',
+    desc:'Entenda o espanhol falado', time:'~18 min',
+    questions: [
+      { type:'listen', q:'Você ouve: <span class="en">"¿Cómo te llamas?"</span>', ttsText:'¿Cómo te llamas?', options:['Como vai?','Qual é seu nome?','Onde mora?','Quantos anos?'], answer:1, explanation:'"¿Cómo te llamas?" = qual é seu nome?' },
+      { type:'listen', q:'Você ouve: <span class="en">"¿Cuánto cuesta?"</span>', ttsText:'¿Cuánto cuesta?', options:['Você gosta?','Qual o tamanho?','Quanto custa?','Tem desconto?'], answer:2, explanation:'"¿Cuánto cuesta?" = quanto custa?' },
+      { type:'listen', q:'Você ouve: <span class="en">"Mucho gusto"</span>', ttsText:'Mucho gusto', options:['Até logo!','Muito prazer!','Como vai?','Boa sorte!'], answer:1, explanation:'"Mucho gusto" = muito prazer.' },
+      { type:'listen', q:'Você ouve: <span class="en">"¡Ten cuidado!"</span>', ttsText:'¡Ten cuidado!', options:['Olha que lindo!','Cuidado!','Preste atenção.','O que foi?'], answer:1, explanation:'"¡Ten cuidado!" = cuidado!' },
+      { type:'listen', q:'Você ouve: <span class="en">"No entiendo"</span>', ttsText:'No entiendo', options:['Eu não gosto','Eu não entendo','Eu não sei','Eu não quero'], answer:1, explanation:'"No entiendo" = não entendo.' },
+      { type:'listen', q:'Você ouve: <span class="en">"¿Puede repetir, por favor?"</span>', ttsText:'¿Puede repetir, por favor?', options:['Pode falar mais alto?','Pode repetir?','Pode escrever?','Pode traduzir?'], answer:1, explanation:'"¿Puede repetir?" = pode repetir?' },
+      { type:'listen', q:'Você ouve: <span class="en">"Estoy perdido"</span>', ttsText:'Estoy perdido', options:['Estou com fome','Estou perdido','Estou atrasado','Estou cansado'], answer:1, explanation:'"Estoy perdido" = estou perdido.' },
+      { type:'listen', q:'Você ouve: <span class="en">"¿Dónde está la estación?"</span>', ttsText:'¿Dónde está la estación?', options:['Onde fica o banheiro?','Onde fica a estação?','Onde é o hotel?','Onde tem taxi?'], answer:1, explanation:'"¿Dónde está la estación?" = onde fica a estação?' },
+    ]
+  },
+  {
+    id:'grammar1', name:'Gramática', icon:'📝', color:'mc-grammar',
+    desc:'Estruturas essenciais do espanhol', time:'~18 min',
+    questions: [
+      { type:'translate-pt', q:'Qual a diferença entre <strong>"ser"</strong> e <strong>"estar"</strong>?', options:['Não há diferença','Ser = permanente, estar = temporário','Ser = temporário, estar = permanente','Ambos significam "to be"'], answer:1, explanation:'"Ser" para características permanentes, "estar" para temporárias.' },
+      { type:'translate-pt', q:'Como se diz <strong>"eu falo"</strong> (hablar)?', options:['Yo hablo','Yo hablas','Yo habla','Yo hablamos'], answer:0, explanation:'1ª pessoa singular: "yo hablo".' },
+      { type:'translate-en', q:'O que significa <span class="en">"¿Hablas español?"</span>?', options:['Você fala português?','Você fala espanhol?','Você entende espanhol?','Você estuda espanhol?'], answer:1, explanation:'"¿Hablas español?" = você fala espanhol?' },
+      { type:'build', q:'Monte: <strong>"Eu gosto de música"</strong>', words:['Me','gusta','la','música','el','yo','mucho'], correct:['Me','gusta','la','música'], explanation:'"Me gusta la música" = eu gosto de música.' },
+      { type:'translate-pt', q:'Qual é o artigo definido masculino singular?', options:['La','Las','Los','El'], answer:3, explanation:'"El" é o artigo masculino singular. "La" é feminino.' },
+      { type:'translate-pt', q:'Como dizer <strong>"eu fui"</strong> (ir, passado)?', options:['Yo voy','Yo iba','Yo fui','Yo iré'], answer:2, explanation:'"Fui" é pretérito perfecto de "ir" e "ser".' },
+      { type:'build', q:'Monte: <strong>"Quero um café"</strong>', words:['Quiero','un','café','una','por','favor'], correct:['Quiero','un','café'], explanation:'"Quiero un café" = quero um café.' },
+      { type:'translate-pt', q:'Qual frase está <strong>no futuro</strong>?', options:['Yo como','Yo comí','Yo comeré','Yo estaba comiendo'], answer:2, explanation:'"Yo comeré" = eu vou comer (futuro).' },
+    ]
+  },
+  {
+    id:'speak1', name:'Conversación', icon:'💬', color:'mc-speak',
+    desc:'Frases do dia a dia em espanhol', time:'~15 min',
+    questions: [
+      { type:'translate-en', q:'O que significa <span class="en">"¿Qué tal?"</span>?', options:['O que é isso?','E aí, como vai?','Que tal?','O que você quer?'], answer:1, explanation:'"¿Qué tal?" = e aí / como vai?' },
+      { type:'translate-en', q:'O que significa <span class="en">"¡Claro que sí!"</span>?', options:['Claro que não!','Com certeza!','Talvez.','Não sei.'], answer:1, explanation:'"¡Claro que sí!" = com certeza!' },
+      { type:'listen', q:'Você ouve: <span class="en">"¿Me puedes ayudar?"</span>', ttsText:'¿Me puedes ayudar?', options:['Você pode me ajudar?','Você está bem?','Você me entende?','Você gosta?'], answer:0, explanation:'"¿Me puedes ayudar?" = você pode me ajudar?' },
+      { type:'translate-en', q:'O que significa <span class="en">"¡Qué buena onda!"</span>?', options:['Que onda ruim!','Que legal / que ótimo!','Que estranho!','Não entendi.'], answer:1, explanation:'"¡Qué buena onda!" = que legal! (expressão informal, muito usada na América Latina).' },
+      { type:'build', q:'Monte: <strong>"Por favor, fale mais devagar"</strong>', words:['Por','favor','habla','más','despacio','lento','rápido'], correct:['Por','favor','habla','más','despacio'], explanation:'"Por favor, habla más despacio" = por favor, fale mais devagar.' },
+      { type:'translate-en', q:'O que significa <span class="en">"No hay problema"</span>?', options:['Tem um problema.','Sem problema!','Preciso de ajuda.','Não entendi.'], answer:1, explanation:'"No hay problema" = sem problema!' },
+      { type:'translate-en', q:'O que significa <span class="en">"¿A qué te dedicas?"</span>?', options:['Onde você mora?','Com o que você trabalha?','Você é casado?','Quantos anos você tem?'], answer:1, explanation:'"¿A qué te dedicas?" = com o que você trabalha?' },
+      { type:'build', q:'Monte: <strong>"Muito obrigado!"</strong>', words:['¡Muchas','gracias','!','de','nada','por'], correct:['¡Muchas','gracias','!'], explanation:'"¡Muchas gracias!" = muito obrigado!' },
+    ]
+  },
+  {
+    id:'write1', name:'Escritura', icon:'✍️', color:'mc-write',
+    desc:'Monte frases em espanhol', time:'~20 min',
+    questions: [
+      { type:'build', q:'Monte: <strong>"Eu moro no Brasil"</strong>', words:['Vivo','en','Brasil','trabajo','de','yo'], correct:['Vivo','en','Brasil'], explanation:'"Vivo en Brasil".' },
+      { type:'build', q:'Monte: <strong>"Eu trabalho todos os dias"</strong>', words:['Trabajo','todos','los','días','siempre','yo'], correct:['Trabajo','todos','los','días'], explanation:'"Trabajo todos los días".' },
+      { type:'translate-pt', q:'Como se escreve <strong>"segunda-feira"</strong> em espanhol?', options:['Domingo','Lunes','Martes','Miércoles'], answer:1, explanation:'"Lunes" = segunda.' },
+      { type:'build', q:'Monte: <strong>"Eu preciso de ajuda"</strong>', words:['Necesito','ayuda','quiero','yo','un'], correct:['Necesito','ayuda'], explanation:'"Necesito ayuda".' },
+      { type:'build', q:'Monte: <strong>"Ela está estudando agora"</strong>', words:['Ella','está','estudiando','ahora','es','hoy'], correct:['Ella','está','estudiando','ahora'], explanation:'"Ella está estudiando ahora".' },
+      { type:'translate-pt', q:'Como dizer <strong>"próxima semana"</strong>?', options:['La semana pasada','Esta semana','La próxima semana','Cada semana'], answer:2, explanation:'"La próxima semana" = próxima semana.' },
+      { type:'build', q:'Monte: <strong>"Quanto tempo leva?"</strong>', words:['¿Cuánto','tiempo','tarda','?','hace','es'], correct:['¿Cuánto','tiempo','tarda','?'], explanation:'"¿Cuánto tiempo tarda?" = quanto tempo leva?' },
+      { type:'build', q:'Monte: <strong>"Onde fica o aeroporto?"</strong>', words:['¿Dónde','está','el','aeropuerto','?','la','es'], correct:['¿Dónde','está','el','aeropuerto','?'], explanation:'"¿Dónde está el aeropuerto?".' },
+    ]
+  },
+],
+
+// ─────────────── FRANCÊS ───────────────
+fr: [
+  {
+    id:'vocab1', name:'Essentiels', icon:'📖', color:'mc-vocab',
+    desc:'Palavras fundamentais em francês', time:'~15 min',
+    questions: [
+      { type:'translate-en', q:'O que significa <span class="en">"Bonjour"</span>?', options:['Tchau','Bom dia / Olá','Por favor','Obrigado'], answer:1, explanation:'"Bonjour" = bom dia / olá (período diurno).' },
+      { type:'translate-en', q:'O que significa <span class="en">"Merci"</span>?', options:['Desculpe','Por favor','Obrigado','De nada'], answer:2, explanation:'"Merci" = obrigado.' },
+      { type:'translate-pt', q:'Como se diz <strong>"água"</strong> em francês?', options:['Lait','Jus','Eau','Nourriture'], answer:2, explanation:'"Eau" = água. (pronunciado "o").' },
+      { type:'build', q:'Monte: <strong>"Je m\'appelle Marco"</strong>', words:["Je","m'appelle","Marco","suis","je","de"], correct:["Je","m'appelle","Marco"], explanation:'"Je m\'appelle [nome]" = meu nome é [nome].' },
+      { type:'translate-pt', q:'Como se diz <strong>"trabalho"</strong> em francês?', options:['Maison','Travail','Voiture','École'], answer:1, explanation:'"Travail" = trabalho.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Je suis fatigué"</span>?', options:['Estou com fome','Estou cansado','Estou feliz','Estou com sede'], answer:1, explanation:'"Fatigué" = cansado.' },
+      { type:'build', q:'Monte: <strong>"Où sont les toilettes?"</strong>', words:['Où','sont','les','toilettes','?','est','la'], correct:['Où','sont','les','toilettes','?'], explanation:'"Où sont les toilettes?" = onde fica o banheiro?' },
+      { type:'translate-pt', q:'Como se diz <strong>"ônibus"</strong> em francês?', options:['Train','Métro','Bus','Voiture'], answer:2, explanation:'"Bus" = ônibus.' },
+      { type:'translate-en', q:'O que significa <span class="en">"S\'il vous plaît"</span>?', options:['Obrigado','Com licença','Por favor','De nada'], answer:2, explanation:'"S\'il vous plaît" = por favor.' },
+      { type:'translate-pt', q:'Como se diz <strong>"hoje"</strong> em francês?', options:["Hier","Demain","Aujourd'hui","Maintenant"], answer:2, explanation:'"Aujourd\'hui" = hoje.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Au revoir"</span>?', options:['Olá','Até mais','Boa noite','Com licença'], answer:1, explanation:'"Au revoir" = até mais.' },
+      { type:'translate-pt', q:'Como se diz <strong>"dinheiro"</strong> em francês?', options:['Argent','Banque','Pièce','Carte'], answer:0, explanation:'"Argent" = dinheiro (também significa "prata").' },
+      { type:'build', q:'Monte: <strong>"Je ne sais pas"</strong>', words:["Je","ne","sais","pas","est","suis","pas"], correct:["Je","ne","sais","pas"], explanation:'"Je ne sais pas" = não sei.' },
+      { type:'translate-pt', q:'Como se diz <strong>"amigo"</strong> em francês?', options:['Famille','Ami','Frère','Voisin'], answer:1, explanation:'"Ami" = amigo.' },
+      { type:'build', q:'Monte: <strong>"Quelle heure est-il?"</strong>', words:['Quelle','heure','est-il','?','sont','la'], correct:['Quelle','heure','est-il','?'], explanation:'"Quelle heure est-il?" = que horas são?' },
+    ]
+  },
+  {
+    id:'listen1', name:'Écoute', icon:'🎧', color:'mc-listen',
+    desc:'Entenda o francês falado', time:'~18 min',
+    questions: [
+      { type:'listen', q:'Você ouve: <span class="en">"Comment vous appelez-vous?"</span>', ttsText:'Comment vous appelez-vous?', options:['Como vai?','Qual é seu nome?','Onde mora?','Quantos anos?'], answer:1, explanation:'"Comment vous appelez-vous?" = qual é seu nome?' },
+      { type:'listen', q:'Você ouve: <span class="en">"Combien ça coûte?"</span>', ttsText:'Combien ça coûte?', options:['Você gosta?','Qual o tamanho?','Quanto custa?','Tem desconto?'], answer:2, explanation:'"Combien ça coûte?" = quanto custa?' },
+      { type:'listen', q:'Você ouve: <span class="en">"Enchanté!"</span>', ttsText:'Enchanté!', options:['Até logo!','Muito prazer!','Como vai?','Boa sorte!'], answer:1, explanation:'"Enchanté!" = muito prazer!' },
+      { type:'listen', q:'Você ouve: <span class="en">"Attention!"</span>', ttsText:'Attention!', options:['Olha que lindo!','Cuidado / Atenção!','Preste atenção.','O que foi?'], answer:1, explanation:'"Attention!" = cuidado / atenção!' },
+      { type:'listen', q:'Você ouve: <span class="en">"Je ne comprends pas"</span>', ttsText:'Je ne comprends pas', options:['Eu não gosto','Eu não entendo','Eu não sei','Eu não quero'], answer:1, explanation:'"Je ne comprends pas" = não entendo.' },
+      { type:'listen', q:'Você ouve: <span class="en">"Pouvez-vous répéter?"</span>', ttsText:'Pouvez-vous répéter?', options:['Pode falar mais alto?','Pode repetir?','Pode escrever?','Pode traduzir?'], answer:1, explanation:'"Pouvez-vous répéter?" = pode repetir?' },
+      { type:'listen', q:'Você ouve: <span class="en">"Je suis perdu"</span>', ttsText:'Je suis perdu', options:['Estou com fome','Estou perdido','Estou atrasado','Estou cansado'], answer:1, explanation:'"Je suis perdu" = estou perdido.' },
+      { type:'listen', q:'Você ouve: <span class="en">"Bonne chance!"</span>', ttsText:'Bonne chance!', options:['Boa sorte!','Bom dia!','Boa noite!','Bom apetite!'], answer:0, explanation:'"Bonne chance!" = boa sorte!' },
+    ]
+  },
+  {
+    id:'grammar1', name:'Grammaire', icon:'📝', color:'mc-grammar',
+    desc:'Estruturas essenciais do francês', time:'~18 min',
+    questions: [
+      { type:'translate-pt', q:'Qual é o artigo definido masculino singular?', options:['La','Les','Un','Le'], answer:3, explanation:'"Le" é o artigo masculino. "La" é feminino.' },
+      { type:'translate-pt', q:'Como se diz <strong>"eu falo"</strong> (parler)?', options:['Je parle','Je parles','Je parlez','Je parlons'], answer:0, explanation:'1ª pessoa singular: "je parle".' },
+      { type:'translate-en', q:'O que significa <span class="en">"Je vais bien"</span>?', options:['Eu vou ao banheiro','Estou bem','Eu vou embora','Estou com fome'], answer:1, explanation:'"Je vais bien" = estou bem.' },
+      { type:'build', q:'Monte: <strong>"J\'aime la musique"</strong>', words:["J'aime","la","musique","le","je","beaucoup"], correct:["J'aime","la","musique"], explanation:'"J\'aime la musique" = eu gosto de música.' },
+      { type:'translate-pt', q:'Qual frase está no passado?', options:["Je mange","Je mangeais","Je mangerai","Je mange bien"], answer:1, explanation:'"Je mangeais" = eu comia (imparfait).' },
+      { type:'translate-pt', q:'Como dizer <strong>"não"</strong> em francês com a forma correta?', options:['Non','Ne...jamais','Ne...pas','Toutes sont corretas'], answer:3, explanation:'Todas são formas de negação: "non", "ne...pas", "ne...jamais".' },
+      { type:'build', q:'Monte: <strong>"Il fait beau"</strong>', words:['Il','fait','beau','temps','le','chaud'], correct:['Il','fait','beau'], explanation:'"Il fait beau" = está um bom tempo / está bom tempo.' },
+      { type:'translate-pt', q:'Qual é o plural de <strong>"un chat"</strong>?', options:['Un chats','Des chats','Le chats','Les chat'], answer:1, explanation:'"Des chats" = gatos. "Des" é artigo indefinido plural.' },
+    ]
+  },
+  {
+    id:'speak1', name:'Conversation', icon:'💬', color:'mc-speak',
+    desc:'Frases do dia a dia em francês', time:'~15 min',
+    questions: [
+      { type:'translate-en', q:'O que significa <span class="en">"Ça va?"</span>?', options:['Que horas são?','Como vai?','O que é isso?','Pode repetir?'], answer:1, explanation:'"Ça va?" = como vai? (informal).' },
+      { type:'translate-en', q:'O que significa <span class="en">"C\'est la vie!"</span>?', options:['Que vida boa!','É assim a vida!','Vou embora!','Não sei.'], answer:1, explanation:'"C\'est la vie!" = é assim a vida! Expressão muito conhecida.' },
+      { type:'listen', q:'Você ouve: <span class="en">"Excusez-moi"</span>', ttsText:'Excusez-moi', options:['Obrigado','Com licença / Desculpe','De nada','Boa sorte'], answer:1, explanation:'"Excusez-moi" = com licença / desculpe.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Je voudrais..."</span>?', options:['Eu tenho...','Eu gostaria de...','Eu preciso...','Eu vi...'], answer:1, explanation:'"Je voudrais" = eu gostaria de. Forma educada de pedir.' },
+      { type:'build', q:'Monte: <strong>"S\'il vous plaît, parlez plus lentement"</strong>', words:["S'il","vous","plaît","parlez","plus","lentement","vite"], correct:["S'il","vous","plaît","parlez","plus","lentement"], explanation:'"S\'il vous plaît, parlez plus lentement" = por favor, fale mais devagar.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Pas de problème"</span>?', options:['Tem um problema.','Sem problema!','Preciso de ajuda.','Não entendi.'], answer:1, explanation:'"Pas de problème" = sem problema!' },
+      { type:'translate-en', q:'O que significa <span class="en">"Bon appétit!"</span>?', options:['Boa sorte!','Bom proveito!','Boa viagem!','Bom dia!'], answer:1, explanation:'"Bon appétit!" = bom proveito! Diz-se antes de comer.' },
+      { type:'build', q:'Monte: <strong>"Je voudrais un café, s\'il vous plaît"</strong>', words:["Je","voudrais","un","café","s'il","vous","plaît","deux"], correct:["Je","voudrais","un","café","s'il","vous","plaît"], explanation:'"Je voudrais un café, s\'il vous plaît" = eu gostaria de um café, por favor.' },
+    ]
+  },
+  {
+    id:'write1', name:'Écriture', icon:'✍️', color:'mc-write',
+    desc:'Monte frases em francês', time:'~20 min',
+    questions: [
+      { type:'build', q:'Monte: <strong>"J\'habite au Brésil"</strong>', words:["J'habite","au","Brésil","travaille","de","je"], correct:["J'habite","au","Brésil"], explanation:'"J\'habite au Brésil" = eu moro no Brasil.' },
+      { type:'build', q:'Monte: <strong>"Je travaille tous les jours"</strong>', words:['Je','travaille','tous','les','jours','toujours','chaque'], correct:['Je','travaille','tous','les','jours'], explanation:'"Je travaille tous les jours".' },
+      { type:'translate-pt', q:'Como se escreve <strong>"segunda-feira"</strong> em francês?', options:['Dimanche','Lundi','Mardi','Mercredi'], answer:1, explanation:'"Lundi" = segunda.' },
+      { type:'build', q:'Monte: <strong>"J\'ai besoin d\'aide"</strong>', words:["J'ai","besoin","d'aide","veux","un","aide"], correct:["J'ai","besoin","d'aide"], explanation:'"J\'ai besoin d\'aide" = eu preciso de ajuda.' },
+      { type:'build', q:'Monte: <strong>"Elle étudie maintenant"</strong>', words:['Elle','étudie','maintenant','est','elle','aujourd'], correct:['Elle','étudie','maintenant'], explanation:'"Elle étudie maintenant" = ela está estudando agora.' },
+      { type:'translate-pt', q:'Como dizer <strong>"próxima semaine"</strong>?', options:['La semaine dernière','Cette semaine','La semaine prochaine','Chaque semaine'], answer:2, explanation:'"La semaine prochaine" = próxima semana.' },
+      { type:'build', q:'Monte: <strong>"Combien de temps faut-il?"</strong>', words:['Combien','de','temps','faut-il','?','est','ça'], correct:['Combien','de','temps','faut-il','?'], explanation:'"Combien de temps faut-il?" = quanto tempo leva?' },
+      { type:'build', q:'Monte: <strong>"Où est l\'aéroport?"</strong>', words:["Où","est","l'aéroport","?","la","gare","sont"], correct:["Où","est","l'aéroport","?"], explanation:'"Où est l\'aéroport?" = onde fica o aeroporto?' },
+    ]
+  },
+],
+
+// ─────────────── ALEMÃO ───────────────
+de: [
+  {
+    id:'vocab1', name:'Grundlagen', icon:'📖', color:'mc-vocab',
+    desc:'Palavras fundamentais em alemão', time:'~15 min',
+    questions: [
+      { type:'translate-en', q:'O que significa <span class="en">"Hallo"</span>?', options:['Tchau','Olá','Por favor','Obrigado'], answer:1, explanation:'"Hallo" = olá.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Danke"</span>?', options:['Desculpe','Por favor','Obrigado','De nada'], answer:2, explanation:'"Danke" = obrigado.' },
+      { type:'translate-pt', q:'Como se diz <strong>"água"</strong> em alemão?', options:['Milch','Saft','Wasser','Essen'], answer:2, explanation:'"Wasser" = água.' },
+      { type:'build', q:'Monte: <strong>"Ich heiße Marco"</strong>', words:['Ich','heiße','Marco','bin','mein','Name'], correct:['Ich','heiße','Marco'], explanation:'"Ich heiße [nome]" = meu nome é [nome].' },
+      { type:'translate-pt', q:'Como se diz <strong>"trabalho"</strong> em alemão?', options:['Haus','Arbeit','Auto','Schule'], answer:1, explanation:'"Arbeit" = trabalho.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Ich bin müde"</span>?', options:['Estou com fome','Estou cansado','Estou feliz','Estou com sede'], answer:1, explanation:'"Müde" = cansado.' },
+      { type:'build', q:'Monte: <strong>"Wo ist die Toilette?"</strong>', words:['Wo','ist','die','Toilette','?','das','hier'], correct:['Wo','ist','die','Toilette','?'], explanation:'"Wo ist die Toilette?" = onde fica o banheiro?' },
+      { type:'translate-pt', q:'Como se diz <strong>"ônibus"</strong> em alemão?', options:['Zug','U-Bahn','Bus','Auto'], answer:2, explanation:'"Bus" = ônibus.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Bitte"</span>?', options:['Obrigado','Com licença','Por favor / De nada','Sim'], answer:2, explanation:'"Bitte" = por favor (ou de nada como resposta).' },
+      { type:'translate-pt', q:'Como se diz <strong>"hoje"</strong> em alemão?', options:['Gestern','Morgen','Heute','Jetzt'], answer:2, explanation:'"Heute" = hoje.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Auf Wiedersehen"</span>?', options:['Olá','Até mais','Boa noite','Com licença'], answer:1, explanation:'"Auf Wiedersehen" = até mais (formal).' },
+      { type:'translate-pt', q:'Como se diz <strong>"dinheiro"</strong> em alemão?', options:['Geld','Bank','Münze','Karte'], answer:0, explanation:'"Geld" = dinheiro.' },
+      { type:'build', q:'Monte: <strong>"Ich weiß nicht"</strong>', words:["Ich","weiß","nicht","bin","es","kein"], correct:["Ich","weiß","nicht"], explanation:'"Ich weiß nicht" = não sei.' },
+      { type:'translate-pt', q:'Como se diz <strong>"amigo"</strong> em alemão?', options:['Familie','Freund','Bruder','Nachbar'], answer:1, explanation:'"Freund" = amigo (masculino).' },
+      { type:'build', q:'Monte: <strong>"Wie spät ist es?"</strong>', words:['Wie','spät','ist','es','?','Uhr','viel'], correct:['Wie','spät','ist','es','?'], explanation:'"Wie spät ist es?" = que horas são?' },
+    ]
+  },
+  {
+    id:'listen1', name:'Hören', icon:'🎧', color:'mc-listen',
+    desc:'Entenda o alemão falado', time:'~18 min',
+    questions: [
+      { type:'listen', q:'Você ouve: <span class="en">"Wie heißen Sie?"</span>', ttsText:'Wie heißen Sie?', options:['Como vai?','Qual é seu nome?','Onde mora?','Quantos anos?'], answer:1, explanation:'"Wie heißen Sie?" = qual é seu nome? (formal).' },
+      { type:'listen', q:'Você ouve: <span class="en">"Was kostet das?"</span>', ttsText:'Was kostet das?', options:['Você gosta?','Qual o tamanho?','Quanto custa?','Tem desconto?'], answer:2, explanation:'"Was kostet das?" = quanto custa isso?' },
+      { type:'listen', q:'Você ouve: <span class="en">"Freut mich!"</span>', ttsText:'Freut mich!', options:['Até logo!','Muito prazer!','Como vai?','Boa sorte!'], answer:1, explanation:'"Freut mich!" = muito prazer!' },
+      { type:'listen', q:'Você ouve: <span class="en">"Achtung!"</span>', ttsText:'Achtung!', options:['Olha que lindo!','Atenção / Cuidado!','Preste atenção.','O que foi?'], answer:1, explanation:'"Achtung!" = atenção / cuidado!' },
+      { type:'listen', q:'Você ouve: <span class="en">"Ich verstehe nicht"</span>', ttsText:'Ich verstehe nicht', options:['Eu não gosto','Eu não entendo','Eu não sei','Eu não quero'], answer:1, explanation:'"Ich verstehe nicht" = não entendo.' },
+      { type:'listen', q:'Você ouve: <span class="en">"Können Sie das wiederholen?"</span>', ttsText:'Können Sie das wiederholen?', options:['Pode falar mais alto?','Pode repetir?','Pode escrever?','Pode traduzir?'], answer:1, explanation:'"Können Sie das wiederholen?" = pode repetir?' },
+      { type:'listen', q:'Você ouve: <span class="en">"Ich bin verloren"</span>', ttsText:'Ich bin verloren', options:['Estou com fome','Estou perdido','Estou atrasado','Estou cansado'], answer:1, explanation:'"Ich bin verloren" = estou perdido.' },
+      { type:'listen', q:'Você ouve: <span class="en">"Guten Morgen!"</span>', ttsText:'Guten Morgen!', options:['Boa tarde!','Bom dia!','Boa noite!','Olá!'], answer:1, explanation:'"Guten Morgen!" = bom dia!' },
+    ]
+  },
+  {
+    id:'grammar1', name:'Grammatik', icon:'📝', color:'mc-grammar',
+    desc:'Estruturas essenciais do alemão', time:'~18 min',
+    questions: [
+      { type:'translate-pt', q:'Qual é o artigo masculino definido em alemão?', options:['Die','Das','Der','Den'], answer:2, explanation:'"Der" é o artigo masculino. "Die" feminino. "Das" neutro.' },
+      { type:'translate-pt', q:'Como se diz <strong>"eu falo"</strong> (sprechen)?', options:['Ich spricht','Ich spreche','Ich sprecht','Ich sprich'], answer:1, explanation:'1ª pessoa singular: "ich spreche".' },
+      { type:'translate-en', q:'O que significa <span class="en">"Ich lerne Deutsch"</span>?', options:['Eu falo alemão','Eu aprendo alemão','Eu preciso alemão','Eu quero alemão'], answer:1, explanation:'"Ich lerne Deutsch" = estou aprendendo alemão.' },
+      { type:'build', q:'Monte: <strong>"Ich mag Musik"</strong>', words:['Ich','mag','Musik','liebe','höre','gerne'], correct:['Ich','mag','Musik'], explanation:'"Ich mag Musik" = eu gosto de música.' },
+      { type:'translate-pt', q:'Qual frase está no passado?', options:['Ich esse','Ich aß','Ich esse gut','Ich werde essen'], answer:1, explanation:'"Ich aß" = eu comi (Präteritum).' },
+      { type:'translate-pt', q:'Onde o verbo vai em uma oração subordinada?', options:['No início','Depois do sujeito','No final','Antes do sujeito'], answer:2, explanation:'Em alemão, o verbo vai ao final da oração subordinada. Regra importante!' },
+      { type:'build', q:'Monte: <strong>"Das Wetter ist schön"</strong>', words:['Das','Wetter','ist','schön','heute','gut'], correct:['Das','Wetter','ist','schön'], explanation:'"Das Wetter ist schön" = o tempo está bom.' },
+      { type:'translate-pt', q:'Como dizer <strong>"eu tenho"</strong> em alemão?', options:['Ich bin','Ich habe','Ich will','Ich kann'], answer:1, explanation:'"Ich habe" = eu tenho.' },
+    ]
+  },
+  {
+    id:'speak1', name:'Gespräch', icon:'💬', color:'mc-speak',
+    desc:'Frases do dia a dia em alemão', time:'~15 min',
+    questions: [
+      { type:'translate-en', q:'O que significa <span class="en">"Wie geht\'s?"</span>?', options:['Que horas são?','Como vai?','Onde fica?','O que é isso?'], answer:1, explanation:'"Wie geht\'s?" = como vai? (informal).' },
+      { type:'translate-en', q:'O que significa <span class="en">"Kein Problem!"</span>?', options:['Tem um problema.','Sem problema!','Preciso de ajuda.','Não entendi.'], answer:1, explanation:'"Kein Problem!" = sem problema!' },
+      { type:'listen', q:'Você ouve: <span class="en">"Entschuldigung"</span>', ttsText:'Entschuldigung', options:['Obrigado','Com licença / Desculpe','De nada','Boa sorte'], answer:1, explanation:'"Entschuldigung" = com licença / desculpe.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Ich hätte gerne..."</span>?', options:['Eu tenho...','Eu gostaria de...','Eu preciso...','Eu vi...'], answer:1, explanation:'"Ich hätte gerne" = eu gostaria de. Forma educada de pedir.' },
+      { type:'build', q:'Monte: <strong>"Sprechen Sie bitte langsamer"</strong>', words:['Sprechen','Sie','bitte','langsamer','schneller','mehr'], correct:['Sprechen','Sie','bitte','langsamer'], explanation:'"Sprechen Sie bitte langsamer" = fale mais devagar, por favor.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Prost!"</span>?', options:['Bom proveito!','Saúde! (brinde)','Boa sorte!','Bom dia!'], answer:1, explanation:'"Prost!" = saúde! Brinde em alemão.' },
+      { type:'translate-en', q:'O que significa <span class="en">"Guten Appetit!"</span>?', options:['Boa sorte!','Bom proveito!','Boa viagem!','Bom dia!'], answer:1, explanation:'"Guten Appetit!" = bom proveito!' },
+      { type:'build', q:'Monte: <strong>"Ich hätte gerne einen Kaffee"</strong>', words:['Ich','hätte','gerne','einen','Kaffee','Tee','bitte'], correct:['Ich','hätte','gerne','einen','Kaffee'], explanation:'"Ich hätte gerne einen Kaffee" = eu gostaria de um café.' },
+    ]
+  },
+  {
+    id:'write1', name:'Schreiben', icon:'✍️', color:'mc-write',
+    desc:'Monte frases em alemão', time:'~20 min',
+    questions: [
+      { type:'build', q:'Monte: <strong>"Ich wohne in Brasilien"</strong>', words:['Ich','wohne','in','Brasilien','arbeite','de'], correct:['Ich','wohne','in','Brasilien'], explanation:'"Ich wohne in Brasilien" = eu moro no Brasil.' },
+      { type:'build', q:'Monte: <strong>"Ich arbeite jeden Tag"</strong>', words:['Ich','arbeite','jeden','Tag','alle','Tage'], correct:['Ich','arbeite','jeden','Tag'], explanation:'"Ich arbeite jeden Tag" = eu trabalho todos os dias.' },
+      { type:'translate-pt', q:'Como se escreve <strong>"segunda-feira"</strong> em alemão?', options:['Sonntag','Montag','Dienstag','Mittwoch'], answer:1, explanation:'"Montag" = segunda.' },
+      { type:'build', q:'Monte: <strong>"Ich brauche Hilfe"</strong>', words:['Ich','brauche','Hilfe','will','ein','Unterstützung'], correct:['Ich','brauche','Hilfe'], explanation:'"Ich brauche Hilfe" = eu preciso de ajuda.' },
+      { type:'build', q:'Monte: <strong>"Sie lernt gerade"</strong>', words:['Sie','lernt','gerade','ist','jetzt','studiert'], correct:['Sie','lernt','gerade'], explanation:'"Sie lernt gerade" = ela está estudando agora.' },
+      { type:'translate-pt', q:'Como dizer <strong>"próxima semana"</strong>?', options:['Letzte Woche','Diese Woche','Nächste Woche','Jede Woche'], answer:2, explanation:'"Nächste Woche" = próxima semana.' },
+      { type:'build', q:'Monte: <strong>"Wo ist der Flughafen?"</strong>', words:['Wo','ist','der','Flughafen','?','die','ein'], correct:['Wo','ist','der','Flughafen','?'], explanation:'"Wo ist der Flughafen?" = onde fica o aeroporto?' },
+      { type:'build', q:'Monte: <strong>"Wie lange dauert es?"</strong>', words:['Wie','lange','dauert','es','?','viel','Zeit'], correct:['Wie','lange','dauert','es','?'], explanation:'"Wie lange dauert es?" = quanto tempo leva?' },
+    ]
+  },
+],
+
+// ─────────────── HINDI ───────────────
+hi: [
+  {
+    id:'vocab1', name:'आधार', icon:'📖', color:'mc-vocab',
+    desc:'Palavras fundamentais em Hindi', time:'~15 min',
+    questions: [
+      { type:'translate-en', q:'O que significa <span class="en">"नमस्ते" (Namaste)</span>?', options:['Tchau','Olá / Saudação','Por favor','Obrigado'], answer:1, explanation:'"Namaste" é a saudação mais conhecida do hindi/indiano.' },
+      { type:'translate-en', q:'O que significa <span class="en">"धन्यवाद" (Dhanyavaad)</span>?', options:['Desculpe','Por favor','Obrigado','De nada'], answer:2, explanation:'"Dhanyavaad" = obrigado.' },
+      { type:'translate-pt', q:'Como se diz <strong>"água"</strong> em hindi?', options:['Dudh','Paani','Roti','Khana'], answer:1, explanation:'"Paani" (पानी) = água.' },
+      { type:'translate-en', q:'O que significa <span class="en">"मेरा नाम Marco है" (Mera naam Marco hai)</span>?', options:['Como vai você?','Meu nome é Marco','Onde fica Marco?','Eu moro em Marco'], answer:1, explanation:'"Mera naam [nome] hai" = meu nome é [nome].' },
+      { type:'translate-pt', q:'Como se diz <strong>"sim"</strong> em hindi?', options:['Nahin','Haan','Theek hai','Shukriya'], answer:1, explanation:'"Haan" (हाँ) = sim.' },
+      { type:'translate-en', q:'O que significa <span class="en">"मैं थका हूँ" (Main thaka hoon)</span>?', options:['Estou com fome','Estou cansado','Estou feliz','Estou com sede'], answer:1, explanation:'"Thaka" = cansado.' },
+      { type:'translate-pt', q:'Como se diz <strong>"não"</strong> em hindi?', options:['Haan','Theek hai','Nahin','Acha'], answer:2, explanation:'"Nahin" (नहीं) = não.' },
+      { type:'translate-pt', q:'Como se diz <strong>"bom dia"</strong> em hindi?', options:['Shubh Ratri','Shubh Prabhat','Namaste','Alvida'], answer:1, explanation:'"Shubh Prabhat" (शुभ प्रभात) = bom dia.' },
+      { type:'translate-en', q:'O que significa <span class="en">"माफ़ करना" (Maaf karna)</span>?', options:['Obrigado','Com licença','Me desculpe','De nada'], answer:2, explanation:'"Maaf karna" = me desculpe / desculpa.' },
+      { type:'translate-pt', q:'Como se diz <strong>"hoje"</strong> em hindi?', options:['Kal','Parso','Aaj','Abhi'], answer:2, explanation:'"Aaj" (आज) = hoje.' },
+      { type:'translate-en', q:'O que significa <span class="en">"अलविदा" (Alvida)</span>?', options:['Olá','Até mais / Adeus','Boa noite','Com licença'], answer:1, explanation:'"Alvida" = até mais / adeus.' },
+      { type:'translate-pt', q:'Como se diz <strong>"dinheiro"</strong> em hindi?', options:['Paisa','Bank','Sikka','Card'], answer:0, explanation:'"Paisa" (पैसा) = dinheiro / dinheiro.' },
+      { type:'translate-en', q:'O que significa <span class="en">"मुझे नहीं पता" (Mujhe nahin pata)</span>?', options:['Eu gosto','Não sei','Eu entendo','Eu preciso'], answer:1, explanation:'"Mujhe nahin pata" = não sei.' },
+      { type:'translate-pt', q:'Como se diz <strong>"amigo"</strong> em hindi?', options:['Parivar','Dost','Bhai','Padosi'], answer:1, explanation:'"Dost" (दोस्त) = amigo.' },
+      { type:'translate-en', q:'O que significa <span class="en">"कितने बजे हैं?" (Kitne baje hain?)</span>?', options:['Como vai?','Qual o seu nome?','Que horas são?','Onde fica?'], answer:2, explanation:'"Kitne baje hain?" = que horas são?' },
+    ]
+  },
+  {
+    id:'listen1', name:'सुनना', icon:'🎧', color:'mc-listen',
+    desc:'Entenda o hindi falado', time:'~18 min',
+    questions: [
+      { type:'listen', q:'Você ouve: <span class="en">"आप कैसे हैं?" (Aap kaise hain?)</span>', ttsText:'Aap kaise hain?', options:['Como vai?','Qual é seu nome?','Onde mora?','Quantos anos?'], answer:0, explanation:'"Aap kaise hain?" = como vai você? (formal).' },
+      { type:'listen', q:'Você ouve: <span class="en">"यह कितने का है?" (Yeh kitne ka hai?)</span>', ttsText:'Yeh kitne ka hai?', options:['Você gosta?','Qual o tamanho?','Quanto custa?','Tem desconto?'], answer:2, explanation:'"Yeh kitne ka hai?" = quanto custa isso?' },
+      { type:'listen', q:'Você ouve: <span class="en">"आपसे मिलकर खुशी हुई" (Aapse milkar khushi hui)</span>', ttsText:'Aapse milkar khushi hui', options:['Até logo!','Muito prazer!','Como vai?','Boa sorte!'], answer:1, explanation:'"Aapse milkar khushi hui" = muito prazer em conhecê-lo.' },
+      { type:'listen', q:'Você ouve: <span class="en">"सावधान!" (Savdhaan!)</span>', ttsText:'Savdhaan!', options:['Olha que lindo!','Cuidado!','Preste atenção.','O que foi?'], answer:1, explanation:'"Savdhaan!" = cuidado!' },
+      { type:'listen', q:'Você ouve: <span class="en">"मुझे समझ नहीं आया" (Mujhe samajh nahin aaya)</span>', ttsText:'Mujhe samajh nahin aaya', options:['Eu não gosto','Eu não entendo','Eu não sei','Eu não quero'], answer:1, explanation:'"Mujhe samajh nahin aaya" = não entendi.' },
+      { type:'listen', q:'Você ouve: <span class="en">"Namaste!"</span>', ttsText:'Namaste!', options:['Adeus!','Olá / Bom dia!','Boa noite!','Como vai?'], answer:1, explanation:'"Namaste" = olá / saudação (usada a qualquer hora).' },
+      { type:'listen', q:'Você ouve: <span class="en">"मैं खो गया" (Main kho gaya)</span>', ttsText:'Main kho gaya', options:['Estou com fome','Estou perdido','Estou atrasado','Estou cansado'], answer:1, explanation:'"Main kho gaya" = estou perdido.' },
+      { type:'listen', q:'Você ouve: <span class="en">"शुभकामनाएं" (Shubhkaamnaayen)</span>', ttsText:'Shubhkaamnaayen', options:['Boa sorte!','Bom dia!','Boa noite!','Obrigado!'], answer:0, explanation:'"Shubhkaamnaayen" = boa sorte / felicitações.' },
+    ]
+  },
+  {
+    id:'grammar1', name:'व्याकरण', icon:'📝', color:'mc-grammar',
+    desc:'Estruturas essenciais do Hindi', time:'~18 min',
+    questions: [
+      { type:'translate-pt', q:'Qual é a estrutura básica de uma frase em hindi?', options:['Sujeito-Verbo-Objeto','Objeto-Verbo-Sujeito','Sujeito-Objeto-Verbo','Verbo-Sujeito-Objeto'], answer:2, explanation:'Hindi usa SOV: Sujeito-Objeto-Verbo. Ex: "Mein khana khata hoon" (Eu comida como).' },
+      { type:'translate-en', q:'O que significa <span class="en">"मैं जाता हूँ" (Main jaata hoon)</span>?', options:['Eu fui','Eu vou','Eu estou indo','Eu irei'], answer:1, explanation:'"Main jaata hoon" = eu vou (presente habitual).' },
+      { type:'translate-pt', q:'Como se diz <strong>"eu sou"</strong> em hindi?', options:['Main hoon','Main hai','Main ho','Main the'], answer:0, explanation:'"Main hoon" (मैं हूँ) = eu sou / estou.' },
+      { type:'translate-en', q:'O que significa <span class="en">"मुझे पानी चाहिए" (Mujhe paani chahiye)</span>?', options:['Eu gosto de água','Eu preciso de água','Eu tenho água','Eu bebi água'], answer:1, explanation:'"Chahiye" = precisar de. "Mujhe X chahiye" = preciso de X.' },
+      { type:'translate-pt', q:'Como dizer <strong>"ontem"</strong> em hindi?', options:['Aaj','Kal (passado)','Parso','Abhi'], answer:1, explanation:'"Kal" significa tanto "ontem" quanto "amanhã" em hindi — o contexto define!' },
+      { type:'translate-en', q:'O que significa <span class="en">"वह आदमी" (Voh aadmi)</span>?', options:['Esta mulher','Esse homem','Aquele menino','Esta pessoa'], answer:1, explanation:'"Voh" = ele/aquele. "Aadmi" = homem.' },
+      { type:'translate-pt', q:'Qual é o sufixo de respeito em hindi?', options:['-ko','-ne','-ji','-se'], answer:2, explanation:'"-ji" é adicionado a nomes para mostrar respeito. Ex: "Gandhi-ji".' },
+      { type:'translate-en', q:'O que significa <span class="en">"मैं हिंदी सीख रहा हूँ" (Main Hindi seekh raha hoon)</span>?', options:['Eu falo hindi','Eu aprendo hindi','Estou aprendendo hindi','Eu sei hindi'], answer:2, explanation:'"Seekh raha hoon" = estou aprendendo (present continuous).' },
+    ]
+  },
+  {
+    id:'speak1', name:'बातचीत', icon:'💬', color:'mc-speak',
+    desc:'Frases do dia a dia em Hindi', time:'~15 min',
+    questions: [
+      { type:'translate-en', q:'O que significa <span class="en">"कोई बात नहीं" (Koi baat nahin)</span>?', options:['Com certeza!','Sem problema!','Muito obrigado!','Não sei.'], answer:1, explanation:'"Koi baat nahin" = sem problema / não tem de quê.' },
+      { type:'translate-en', q:'O que significa <span class="en">"ठीक है" (Theek hai)</span>?', options:['Que ótimo!','Tudo bem / OK','Não entendi.','Com licença.'], answer:1, explanation:'"Theek hai" = tá bom / OK.' },
+      { type:'listen', q:'Você ouve: <span class="en">"क्षमा करें" (Kshama karen)</span>', ttsText:'Kshama karen', options:['Obrigado','Com licença / Desculpe','De nada','Boa sorte'], answer:1, explanation:'"Kshama karen" = com licença / desculpe (formal).' },
+      { type:'translate-en', q:'O que significa <span class="en">"मुझे पसंद है" (Mujhe pasand hai)</span>?', options:['Eu preciso','Eu gosto','Eu não gosto','Eu tenho'], answer:1, explanation:'"Mujhe pasand hai" = eu gosto.' },
+      { type:'translate-en', q:'O que significa <span class="en">"बहुत अच्छा!" (Bahut achha!)</span>?', options:['Muito ruim!','Muito bom!','Mais ou menos.','Não sei.'], answer:1, explanation:'"Bahut achha!" = muito bom! Elogio muito comum.' },
+      { type:'translate-en', q:'O que significa <span class="en">"एक मिनट" (Ek minute)</span>?', options:['Vá embora!','Um minuto!','Muito tempo.','Estou com pressa.'], answer:1, explanation:'"Ek minute" = um minuto. Pedido para esperar.' },
+      { type:'translate-en', q:'O que significa <span class="en">"खाना खाइए" (Khana khaiye)</span>?', options:['Vamos comprar comida.','Coma a comida / Bom apetite.','A comida está pronta.','Preciso de comida.'], answer:1, explanation:'"Khana khaiye" = coma / bom apetite (forma educada de convidar).' },
+      { type:'translate-en', q:'O que significa <span class="en">"आप कहाँ से हैं?" (Aap kahan se hain?)</span>?', options:['Onde você mora?','De onde você é?','Para onde vai?','Quanto tempo ficará?'], answer:1, explanation:'"Aap kahan se hain?" = de onde você é?' },
+    ]
+  },
+  {
+    id:'write1', name:'लेखन', icon:'✍️', color:'mc-write',
+    desc:'Frases essenciais em Hindi', time:'~20 min',
+    questions: [
+      { type:'translate-pt', q:'Como se diz <strong>"eu moro no Brasil"</strong> em hindi (transliteração)?', options:['Main Brazil mein rahta hoon','Main Brazil se hoon','Main Brazil jaata hoon','Main Brazil dekhta hoon'], answer:0, explanation:'"Main Brazil mein rahta hoon" = eu moro no Brasil.' },
+      { type:'translate-pt', q:'Como se diz <strong>"eu preciso de ajuda"</strong>?', options:['Mujhe madad chahiye','Main madad deta hoon','Mujhe madad nahin chahiye','Main madad lene aaya'], answer:0, explanation:'"Mujhe madad chahiye" = eu preciso de ajuda.' },
+      { type:'translate-pt', q:'Como se diz <strong>"segunda-feira"</strong> em hindi?', options:['Ravivar','Somvar','Mangalvar','Budhvar'], answer:1, explanation:'"Somvar" (सोमवार) = segunda-feira.' },
+      { type:'translate-pt', q:'Como dizer <strong>"onde fica o banheiro?"</strong>?', options:['Khaana kahan hai?','Bathroom kahan hai?','Paani kahan hai?','Dukaan kahan hai?'], answer:1, explanation:'"Bathroom kahan hai?" = onde fica o banheiro?' },
+      { type:'translate-pt', q:'Como dizer <strong>"quanto custa?"</strong> em hindi?', options:['Yeh kya hai?','Yeh kitne ka hai?','Yeh kahan hai?','Yeh kaisa hai?'], answer:1, explanation:'"Yeh kitne ka hai?" = quanto custa isso?' },
+      { type:'translate-pt', q:'Como se diz <strong>"eu gosto de comer"</strong>?', options:['Mujhe khana pasand hai','Main khana nahin khata','Mujhe khana nahin chahiye','Main khana bana raha hoon'], answer:0, explanation:'"Mujhe khana pasand hai" = eu gosto de comer.' },
+      { type:'translate-pt', q:'Como se diz <strong>"próxima semana"</strong> em hindi?', options:['Pichli hafte','Is hafte','Agle hafte','Har hafte'], answer:2, explanation:'"Agle hafte" = próxima semana.' },
+      { type:'translate-pt', q:'Como se diz <strong>"onde fica o aeroporto?"</strong>?', options:['Airport kahan hai?','Station kahan hai?','Hotel kahan hai?','Market kahan hai?'], answer:0, explanation:'"Airport kahan hai?" = onde fica o aeroporto?' },
+    ]
+  },
+],
+
+};
+
+const PATH_UNITS = [
+  { id:1, icon:'🌱', title:'Unit 1: Primeiras Palavras', desc:'Saudações, números e apresentações' },
+  { id:2, icon:'🏠', title:'Unit 2: Vida Cotidiana', desc:'Casa, família e rotina diária' },
+  { id:3, icon:'🛒', title:'Unit 3: Compras & Comida', desc:'Compras, restaurante e preços' },
+  { id:4, icon:'🚌', title:'Unit 4: Deslocamentos', desc:'Transporte, direções e lugares' },
+  { id:5, icon:'💼', title:'Unit 5: Trabalho', desc:'Escritório, reuniões e email' },
+  { id:6, icon:'🗣️', title:'Unit 6: Conversação', desc:'Conversas informais e expressões' },
+  { id:7, icon:'📰', title:'Unit 7: Cultura & Mídia', desc:'Notícias, redes sociais, cultura' },
+  { id:8, icon:'🏆', title:'Unit 8: Fluência', desc:'Conversação avançada e expressões' },
+];
+
+// ══════════════════════════════════════════════════════
+// APP STATE — per language progress
+// ══════════════════════════════════════════════════════
+let userName = '';
+let currentLang = 'en';
+
+// Default state template
+function defaultState() {
+  return {
+    xp: 0, streak: 1, lessonsCompleted: 0,
+    totalCorrect: 0, totalQuestions: 0,
+    achievements: {}, modulesDone: {}
+  };
+}
+
+// Load all user data
+function loadUserData() {
+  try {
+    const raw = localStorage.getItem('lq_user');
+    if (raw) {
+      const u = JSON.parse(raw);
+      userName = u.userName || '';
+      currentLang = u.currentLang || 'en';
+    }
+  } catch(e) {}
+}
+
+function saveUserData() {
+  try {
+    localStorage.setItem('lq_user', JSON.stringify({ userName, currentLang }));
+  } catch(e) {}
+}
+
+function getState() {
+  try {
+    const key = `lq_state_${currentLang}`;
+    const raw = localStorage.getItem(key);
+    if (raw) return { ...defaultState(), ...JSON.parse(raw) };
+  } catch(e) {}
+  return defaultState();
+}
+
+function saveState(s) {
+  try {
+    localStorage.setItem(`lq_state_${currentLang}`, JSON.stringify(s));
+  } catch(e) {}
+}
+
+// Exercise state
+let exModule = null, exQuestions = [], exIdx = 0, exLives = 3, exCorrect = 0;
+let selectedOption = null, builtSentence = [], answered = false;
+let currentSpeechSynth = null;
+
+// ══════════════════════════════════════════════════════
+// SPLASH / ONBOARDING
+// ══════════════════════════════════════════════════════
+let selectedLangOnSplash = 'en';
+
+function selectLang(el) {
+  document.querySelectorAll('#langGrid .lang-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedLangOnSplash = el.dataset.lang;
+}
+
+function startApp() {
+  const nameVal = document.getElementById('nameInput').value.trim();
+  if (!nameVal) {
+    document.getElementById('nameInput').focus();
+    document.getElementById('nameInput').style.borderColor = 'var(--danger)';
+    setTimeout(() => document.getElementById('nameInput').style.borderColor = '', 1500);
+    return;
+  }
+  userName = nameVal;
+  currentLang = selectedLangOnSplash;
+  saveUserData();
+  goHome();
+}
+
+// ══════════════════════════════════════════════════════
+// SCREENS
+// ══════════════════════════════════════════════════════
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function goHome() {
+  updateHome();
+  showScreen('home');
+}
+
+function showTab(tab) {
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  if (tab === 'home') { goHome(); document.querySelectorAll('.nav-btn')[0].classList.add('active'); return; }
+  if (tab === 'progress') { renderPath(); showScreen('progress-screen'); document.querySelectorAll('.nav-btn')[1].classList.add('active'); }
+  if (tab === 'profile') { renderProfile(); showScreen('profile-screen'); document.querySelectorAll('.nav-btn')[2].classList.add('active'); }
+}
+
+// ══════════════════════════════════════════════════════
+// LANGUAGE MODAL
+// ══════════════════════════════════════════════════════
+function openLangModal() {
+  document.querySelectorAll('#modalLangGrid .lang-card').forEach(c => {
+    c.classList.toggle('selected', c.dataset.lang === currentLang);
+  });
+  document.getElementById('langModal').classList.add('open');
+}
+
+function closeLangModal(e) {
+  if (!e || e.target === document.getElementById('langModal')) {
+    document.getElementById('langModal').classList.remove('open');
+  }
+}
+
+function switchLang(lang) {
+  currentLang = lang;
+  saveUserData();
+  document.getElementById('langModal').classList.remove('open');
+  goHome();
+  showToast('Idioma alterado para ' + LANG_CONFIG[lang].name + '! 🌍');
+}
+
+// ══════════════════════════════════════════════════════
+// HOME
+// ══════════════════════════════════════════════════════
+function updateHome() {
+  const state = getState();
+  const cfg = LANG_CONFIG[currentLang];
+
+  // Greeting
+  const h = new Date().getHours();
+  const greet = h < 12 ? 'Bom dia,' : h < 18 ? 'Boa tarde,' : 'Boa noite,';
+  document.getElementById('homeGreeting').textContent = greet;
+  document.getElementById('homeUserName').textContent = (userName || '—') + ' 👋';
+  document.getElementById('profileName').textContent = userName || '—';
+  document.getElementById('currentLangLabel').textContent = cfg.label;
+
+  // Level
+  let lvl = 0;
+  for (let i = 0; i < LEVELS.length; i++) { if (state.xp >= LEVELS[i].xp) lvl = i; }
+  const nextLvl = LEVELS[lvl + 1];
+  const xpInLevel = state.xp - LEVELS[lvl].xp;
+  const xpNeeded = nextLvl ? nextLvl.xp - LEVELS[lvl].xp : 999;
+  const pct = Math.min(100, Math.round((xpInLevel / xpNeeded) * 100));
+
+  document.getElementById('levelNum').textContent = lvl + 1;
+  document.getElementById('levelTitle').textContent = LEVELS[lvl].name;
+  document.getElementById('xpCurrent').textContent = state.xp;
+  document.getElementById('xpNext').textContent = nextLvl ? `${nextLvl.xp - state.xp} para LV ${lvl+2}` : 'Nível máximo!';
+  document.getElementById('xpBar').style.width = pct + '%';
+  document.getElementById('streakCount').textContent = state.streak;
+  document.getElementById('totalXP').textContent = state.xp;
+  document.getElementById('lessonsCount').textContent = state.lessonsCompleted;
+  const acc = state.totalQuestions > 0 ? Math.round((state.totalCorrect/state.totalQuestions)*100)+'%' : '—';
+  document.getElementById('accuracyNum').textContent = acc;
+
+  // Progress screen label
+  document.getElementById('progressLangLabel').textContent = `Trilha de ${cfg.name}`;
+
+  // Tip
+  const tips = TIPS_BY_LANG[currentLang] || TIPS_BY_LANG['en'];
+  document.getElementById('dailyTip').innerHTML = tips[Math.floor(Math.random() * tips.length)];
+
+  // Modules
+  const mods = MODULES_BY_LANG[currentLang] || MODULES_BY_LANG['en'];
+  const list = document.getElementById('moduleList');
+  list.innerHTML = '';
+  mods.forEach(m => {
+    const done = state.modulesDone[m.id];
+    const card = document.createElement('div');
+    card.className = `module-card ${m.color}`;
+    card.innerHTML = `
+      ${done ? '<div class="module-done">✅</div>' : ''}
+      <div class="module-icon">${m.icon}</div>
+      <div class="module-name">${m.name}</div>
+      <div class="module-desc">${m.desc}</div>
+      <div class="module-stars">
+        <span>⭐</span>
+        <span class="${done >= 2 ? '' : 'empty'}">⭐</span>
+        <span class="${done >= 3 ? '' : 'empty'}">⭐</span>
+      </div>
+      <div class="module-time">⏱ ${m.time}</div>
+    `;
+    card.onclick = () => startLesson(m);
+    list.appendChild(card);
+  });
+}
+
+function startRandomLesson() {
+  const mods = MODULES_BY_LANG[currentLang] || MODULES_BY_LANG['en'];
+  const mod = mods[Math.floor(Math.random() * mods.length)];
+  startLesson(mod);
+}
+
+// ══════════════════════════════════════════════════════
+// EXERCISE ENGINE
+// ══════════════════════════════════════════════════════
+function startLesson(mod) {
+  exModule = mod;
+  exQuestions = [...mod.questions].sort(() => Math.random() - 0.5).slice(0, 8);
+  exIdx = 0; exLives = 3; exCorrect = 0;
+  answered = false;
+  document.getElementById('feedbackBar').classList.add('hidden');
+  updateLives();
+  renderQuestion();
+  showScreen('exercise');
+}
+
+function updateLives() {
+  const el = document.getElementById('exLives');
+  el.innerHTML = '';
+  for (let i = 0; i < 3; i++) el.innerHTML += i < exLives ? '❤️' : '🖤';
+}
+
+function renderQuestion() {
+  const q = exQuestions[exIdx];
+  const total = exQuestions.length;
+  document.getElementById('exStep').textContent = `${exIdx+1}/${total}`;
+  document.getElementById('exProgressFill').style.width = ((exIdx/total)*100) + '%';
+
+  answered = false; selectedOption = null; builtSentence = [];
+
+  const body = document.getElementById('exBody');
+  body.innerHTML = '';
+
+  const tag = document.createElement('div');
+  tag.className = 'ex-module-tag';
+  tag.innerHTML = `${exModule.icon} ${exModule.name}`;
+  body.appendChild(tag);
+
+  const qEl = document.createElement('div');
+  qEl.className = 'ex-question';
+  qEl.innerHTML = q.q;
+  body.appendChild(qEl);
+
+  // Audio button for listen questions — uses Web Speech API
+  if (q.type === 'listen' && q.ttsText) {
+    const audioBtnEl = document.createElement('div');
+    audioBtnEl.className = 'audio-btn';
+    audioBtnEl.id = 'audioBtn';
+    audioBtnEl.innerHTML = `<div class="pulse"></div> 🔊 Ouvir`;
+    audioBtnEl.onclick = () => speakText(q.ttsText, audioBtnEl);
+    body.appendChild(audioBtnEl);
+  }
+
+  if (q.type === 'translate-en' || q.type === 'translate-pt' || q.type === 'listen') {
+    const grid = document.createElement('div');
+    grid.className = 'options-grid';
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('div');
+      btn.className = 'option-btn';
+      btn.textContent = opt;
+      btn.dataset.idx = i;
+      btn.onclick = () => selectOption(btn, i, q);
+      grid.appendChild(btn);
+    });
+    body.appendChild(grid);
+  } else if (q.type === 'build') {
+    const sentenceEl = document.createElement('div');
+    sentenceEl.className = 'sentence-build';
+    sentenceEl.id = 'sentenceBuild';
+    sentenceEl.innerHTML = '<span style="color:var(--text-muted);font-size:13px">Toque nas palavras abaixo ↓</span>';
+    body.appendChild(sentenceEl);
+
+    const bankEl = document.createElement('div');
+    bankEl.className = 'word-bank';
+    bankEl.id = 'wordBank';
+    const shuffled = [...q.words].sort(() => Math.random() - 0.5);
+    shuffled.forEach(w => {
+      const chip = document.createElement('div');
+      chip.className = 'word-chip';
+      chip.textContent = w;
+      chip.onclick = () => addWord(w, chip, q);
+      bankEl.appendChild(chip);
+    });
+    body.appendChild(bankEl);
+
+    const checkBtn = document.createElement('button');
+    checkBtn.className = 'btn btn-primary';
+    checkBtn.id = 'checkBtn';
+    checkBtn.textContent = '✓ Verificar';
+    checkBtn.onclick = () => checkBuild(q);
+    body.appendChild(checkBtn);
+  }
+}
+
+// ── SPEECH SYNTHESIS (Web Speech API) ──
+function speakText(text, btnEl) {
+  if (!window.speechSynthesis) {
+    showToast('Áudio não disponível neste navegador.'); return;
+  }
+  // Cancel any ongoing speech
+  window.speechSynthesis.cancel();
+
+  const cfg = LANG_CONFIG[currentLang];
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = cfg.ttsLang;
+  utter.rate = cfg.ttsRate;
+  utter.pitch = 1;
+  utter.volume = 1;
+
+  if (btnEl) {
+    btnEl.classList.add('speaking');
+    btnEl.innerHTML = '<div class="pulse"></div> 🔊 Falando...';
+  }
+
+  utter.onend = () => {
+    if (btnEl) {
+      btnEl.classList.remove('speaking');
+      btnEl.innerHTML = '<div class="pulse"></div> 🔊 Ouvir novamente';
+    }
+  };
+  utter.onerror = () => {
+    if (btnEl) {
+      btnEl.classList.remove('speaking');
+      btnEl.innerHTML = '<div class="pulse"></div> 🔊 Ouvir';
+    }
+  };
+
+  window.speechSynthesis.speak(utter);
+}
+
+function selectOption(btn, idx, q) {
+  if (answered) return;
+  answered = true;
+
+  document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+
+  const correct = idx === q.answer;
+  showFeedback(correct, q, () => {
+    document.querySelectorAll('.option-btn').forEach(b => {
+      if (parseInt(b.dataset.idx) === q.answer) b.classList.add('correct');
+    });
+    if (!correct) btn.classList.add('wrong');
+  });
+}
+
+function addWord(word, chip, q) {
+  if (chip.classList.contains('selected')) {
+    const newArr = [];
+    let removed = false;
+    for (let i = builtSentence.length - 1; i >= 0; i--) {
+      if (builtSentence[i] === word && !removed) { removed = true; }
+      else newArr.unshift(builtSentence[i]);
+    }
+    builtSentence = newArr;
+    chip.classList.remove('selected');
+  } else {
+    builtSentence.push(word);
+    chip.classList.add('selected');
+  }
+  updateSentenceDisplay();
+}
+
+function updateSentenceDisplay() {
+  const el = document.getElementById('sentenceBuild');
+  if (builtSentence.length === 0) {
+    el.innerHTML = '<span style="color:var(--text-muted);font-size:13px">Toque nas palavras abaixo ↓</span>';
+    return;
+  }
+  el.innerHTML = '';
+  builtSentence.forEach(w => {
+    const chip = document.createElement('div');
+    chip.className = 'word-chip';
+    chip.textContent = w;
+    el.appendChild(chip);
+  });
+}
+
+function checkBuild(q) {
+  if (builtSentence.length === 0) { showToast('Adicione palavras primeiro!'); return; }
+  if (answered) return;
+  answered = true;
+  const correct = builtSentence.join(' ') === q.correct.join(' ');
+  showFeedback(correct, q);
+}
+
+function showFeedback(correct, q, callback) {
+  if (callback) callback();
+  const state = getState();
+  if (correct) { exCorrect++; }
+  else { exLives--; updateLives(); }
+
+  state.totalQuestions++;
+  if (correct) state.totalCorrect++;
+  saveState(state);
+
+  // Play audio for correct answer on listen questions
+  if (correct && q.type === 'listen' && q.ttsText) {
+    setTimeout(() => speakText(q.ttsText, null), 300);
+  }
+
+  const bar = document.getElementById('feedbackBar');
+  bar.classList.remove('hidden', 'correct-fb', 'wrong-fb');
+  bar.classList.add(correct ? 'correct-fb' : 'wrong-fb');
+  document.getElementById('fbTitle').textContent = correct ? '✅ Correto!' : '❌ Errado';
+  document.getElementById('fbAnswer').textContent = q.explanation;
+  document.getElementById('fbNext').textContent = exIdx + 1 >= exQuestions.length ? 'VER RESULTADO' : 'CONTINUAR';
+}
+
+function nextQuestion() {
+  window.speechSynthesis && window.speechSynthesis.cancel();
+  document.getElementById('feedbackBar').classList.add('hidden');
+  exIdx++;
+  if (exIdx >= exQuestions.length || exLives <= 0) finishLesson();
+  else renderQuestion();
+}
+
+function finishLesson() {
+  window.speechSynthesis && window.speechSynthesis.cancel();
+  const state = getState();
+  const xpEarned = exCorrect * 15 + (exLives > 0 ? 10 : 0);
+  state.xp += xpEarned;
+  state.lessonsCompleted++;
+  state.modulesDone[exModule.id] = (state.modulesDone[exModule.id] || 0) + 1;
+
+  if (state.lessonsCompleted === 1) state.achievements['lesson1'] = true;
+  if (state.xp >= 100) state.achievements['xp100'] = true;
+  if (state.xp >= 500) state.achievements['xp500'] = true;
+  if (state.lessonsCompleted >= 10) state.achievements['lessons10'] = true;
+  if (exModule.id === 'write1') state.achievements['write1'] = true;
+  if (exModule.id === 'listen1') state.achievements['listen1'] = true;
+  if (exModule.id === 'grammar1') state.achievements['grammar1'] = true;
+  if (exModule.id === 'food1') state.achievements['food1'] = true;
+  if (exModule.id === 'travel1') state.achievements['travel1'] = true;
+  if (exModule.id === 'work1') state.achievements['work1'] = true;
+  if (exModule.id === 'numbers1') state.achievements['numbers1'] = true;
+  saveState(state);
+
+  const acc = Math.round((exCorrect / exQuestions.length) * 100);
+  document.getElementById('resXP').textContent = '+' + xpEarned;
+  document.getElementById('resCorrect').textContent = exCorrect + '/' + exQuestions.length;
+  document.getElementById('resAccuracy').textContent = acc + '%';
+
+  let emoji = '🏆', title = 'Incrível!';
+  if (acc < 50) { emoji = '😅'; title = 'Continue Praticando!'; }
+  else if (acc < 80) { emoji = '👍'; title = 'Muito Bem!'; }
+
+  document.getElementById('resultEmoji').textContent = emoji;
+  document.getElementById('resultTitle').textContent = title;
+  document.getElementById('resultSub').textContent = `+${xpEarned} XP · ${acc}% de precisão`;
+
+  showScreen('result-screen');
+  if (acc >= 80) launchConfetti();
+  showToast(`+${xpEarned} XP ganhos! 🎉`, 'xp');
+}
+
+function replayLesson() { startLesson(exModule); }
+
+function confirmBack() {
+  window.speechSynthesis && window.speechSynthesis.cancel();
+  if (confirm('Sair da lição? Seu progresso será perdido.')) goHome();
+}
+
+// ══════════════════════════════════════════════════════
+// PATH
+// ══════════════════════════════════════════════════════
+function renderPath() {
+  const state = getState();
+  const container = document.getElementById('pathContainer');
+  container.innerHTML = '';
+  PATH_UNITS.forEach((unit, i) => {
+    const div = document.createElement('div');
+    div.className = 'path-unit';
+    const status = i === 0 ? 'active' : (i <= Math.floor(state.lessonsCompleted / 2) ? 'done' : 'locked');
+    div.innerHTML = `
+      <div class="path-node ${status}" onclick="${status !== 'locked' ? 'startRandomLesson()' : ''}">
+        ${status === 'done' ? '✅' : unit.icon}
+      </div>
+      <div class="path-info"><h3>${unit.title}</h3><p>${unit.desc}</p></div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+// ══════════════════════════════════════════════════════
+// PROFILE
+// ══════════════════════════════════════════════════════
+function renderProfile() {
+  const state = getState();
+  let lvl = 0;
+  for (let i = 0; i < LEVELS.length; i++) { if (state.xp >= LEVELS[i].xp) lvl = i; }
+  document.getElementById('profileLevel').textContent = LEVELS[lvl].name;
+  document.getElementById('profileName').textContent = userName || '—';
+
+  const achEl = document.getElementById('achievements');
+  achEl.innerHTML = '';
+  ACHIEVEMENTS.forEach(a => {
+    const earned = !!state.achievements[a.key];
+    const div = document.createElement('div');
+    div.className = 'ach-card' + (earned ? ' earned' : '');
+    div.innerHTML = `<div class="ach-icon">${earned ? a.icon : '🔒'}</div><div class="ach-name">${a.name}</div>`;
+    achEl.appendChild(div);
+  });
+
+  const cfg = LANG_CONFIG[currentLang];
+  const acc = state.totalQuestions > 0 ? Math.round((state.totalCorrect/state.totalQuestions)*100)+'%' : '—';
+  document.getElementById('profileStats').innerHTML = `
+    <div class="stat-row-full"><label>🌍 Idioma Atual</label><strong>${cfg.label}</strong></div>
+    <div class="stat-row-full"><label>🏆 XP Total (${cfg.name})</label><strong>${state.xp}</strong></div>
+    <div class="stat-row-full"><label>📚 Lições Concluídas</label><strong>${state.lessonsCompleted}</strong></div>
+    <div class="stat-row-full"><label>🔥 Streak Atual</label><strong>${state.streak} dias</strong></div>
+    <div class="stat-row-full"><label>✅ Precisão Geral</label><strong>${acc}</strong></div>
+    <div class="stat-row-full"><label>❓ Questões Respondidas</label><strong>${state.totalQuestions}</strong></div>
+    <div style="height:4px"></div>
+    <button class="btn btn-secondary" onclick="editName()">✏️ Alterar Nome</button>
+    <button class="btn btn-secondary" style="margin-top:8px;border-color:var(--danger);color:var(--danger)" onclick="if(confirm('Resetar progresso de ${cfg.name}?')){localStorage.removeItem('lq_state_${currentLang}');location.reload()}">🗑️ Resetar Progresso (${cfg.name})</button>
+  `;
+}
+
+function editName() {
+  const newName = prompt('Seu nome:', userName);
+  if (newName && newName.trim()) {
+    userName = newName.trim();
+    saveUserData();
+    document.getElementById('profileName').textContent = userName;
+    document.getElementById('homeUserName').textContent = userName + ' 👋';
+    showToast('Nome atualizado!');
+  }
+}
+
+// ══════════════════════════════════════════════════════
+// FX
+// ══════════════════════════════════════════════════════
+function showToast(msg, cls = '') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + cls;
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+function launchConfetti() {
+  const wrap = document.getElementById('confettiWrap');
+  wrap.innerHTML = '';
+  const colors = ['#f6c90e','#ff6b6b','#4ecdc4','#a855f7','#06d6a0','#fff'];
+  for (let i = 0; i < 60; i++) {
+    const p = document.createElement('div');
+    p.className = 'confetti-piece';
+    p.style.cssText = `left:${Math.random()*100}%;top:-20px;background:${colors[Math.floor(Math.random()*colors.length)]};width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;animation-delay:${Math.random()*1.5}s;animation-duration:${1.5+Math.random()*1}s;border-radius:${Math.random()>.5?'50%':'2px'};`;
+    wrap.appendChild(p);
+  }
+  setTimeout(() => wrap.innerHTML = '', 4000);
+}
+
+// ══════════════════════════════════════════════════════
+// PWA — Service Worker Registration
+// ══════════════════════════════════════════════════════
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    const swCode = `// ══════════════════════════════════════════════════════
+// LinguaQuest — Service Worker
+// Estratégia: Cache First + Network Fallback
+// ══════════════════════════════════════════════════════
+
+const CACHE_NAME = 'linguaquest-v1';
+
+// Recursos essenciais para funcionar offline
+const PRECACHE_URLS = [
+  './',
+  './index.html',
+  './manifest.json',
+  // Google Fonts (serão cacheados no primeiro acesso)
+  'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap'
+];
+
+// ── INSTALL: pré-cacheia os arquivos essenciais ──────
+self.addEventListener('install', event => {
+  console.log('[SW] Instalando...');
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => {
+        console.log('[SW] Cacheando arquivos essenciais');
+        // Cacheia arquivos locais (crítico), fonts são opcionais
+        return cache.addAll(['./', './index.html', './manifest.json'])
+          .then(() => {
+            // Tenta cachear fonts (não bloqueia se falhar)
+            return cache.add('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap')
+              .catch(() => console.log('[SW] Fonts serão cacheadas no primeiro uso'));
+          });
+      })
+      .then(() => {
+        console.log('[SW] Instalação concluída');
+        return self.skipWaiting(); // Ativa imediatamente
+      })
+  );
+});
+
+// ── ACTIVATE: limpa caches antigos ──────────────────
+self.addEventListener('activate', event => {
+  console.log('[SW] Ativando...');
+  event.waitUntil(
+    caches.keys()
+      .then(cacheNames => {
+        return Promise.all(
+          cacheNames
+            .filter(name => name !== CACHE_NAME)
+            .map(name => {
+              console.log('[SW] Removendo cache antigo:', name);
+              return caches.delete(name);
+            })
+        );
+      })
+      .then(() => {
+        console.log('[SW] Ativo e controlando todas as abas');
+        return self.clients.claim();
+      })
+  );
+});
+
+// ── FETCH: Cache First → Network → Fallback ─────────
+self.addEventListener('fetch', event => {
+  const { request } = event;
+  const url = new URL(request.url);
+
+  // Ignora requisições não-GET e chrome-extension
+  if (request.method !== 'GET' || url.protocol === 'chrome-extension:') return;
+
+  // Estratégia para Google Fonts: Cache First
+  if (url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com') {
+    event.respondWith(cacheFirst(request));
+    return;
+  }
+
+  // Estratégia para arquivos locais: Cache First com fallback de rede
+  if (url.origin === self.location.origin) {
+    event.respondWith(cacheFirst(request));
+    return;
+  }
+
+  // Para outras origens (ex: APIs): Network First
+  event.respondWith(networkFirst(request));
+});
+
+// ── Estratégia: Cache First ─────────────────────────
+async function cacheFirst(request) {
+  try {
+    const cached = await caches.match(request);
+    if (cached) return cached;
+
+    const response = await fetch(request);
+    if (response && response.status === 200) {
+      const cache = await caches.open(CACHE_NAME);
+      cache.put(request, response.clone()); // Cacheia para a próxima vez
+    }
+    return response;
+  } catch (err) {
+    // Offline e não está no cache: retorna página principal como fallback
+    const fallback = await caches.match('./index.html');
+    if (fallback) return fallback;
+    return new Response('<h2>Você está offline. Abra o LinguaQuest online primeiro.</h2>', {
+      headers: { 'Content-Type': 'text/html; charset=utf-8' }
+    });
+  }
+}
+
+// ── Estratégia: Network First ───────────────────────
+async function networkFirst(request) {
+  try {
+    const response = await fetch(request);
+    if (response && response.status === 200) {
+      const cache = await caches.open(CACHE_NAME);
+      cache.put(request, response.clone());
+    }
+    return response;
+  } catch (err) {
+    const cached = await caches.match(request);
+    return cached || new Response('Offline', { status: 503 });
+  }
+}
+
+// ── PUSH NOTIFICATIONS (estrutura para uso futuro) ──
+self.addEventListener('push', event => {
+  const data = event.data ? event.data.json() : {};
+  const title = data.title || 'LinguaQuest';
+  const options = {
+    body: data.body || '🔥 Mantenha seu streak! Estude hoje.',
+    icon: './icon-192.png',
+    badge: './icon-192.png',
+    vibrate: [200, 100, 200],
+    data: { url: data.url || './' }
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  event.waitUntil(
+    clients.openWindow(event.notification.data.url || './')
+  );
+});
+`;
+    const blob = new Blob([swCode], {type: 'text/javascript'});
+    const swUrl = URL.createObjectURL(blob);
+    navigator.serviceWorker.register(swUrl)
+      .then(reg => { console.log('[SW] Registrado:', reg.scope); })
+      .catch(err => console.warn('[SW] Falha:', err));
+  });
+}
+
+// PWA — Install prompt
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  // Show install toast after a short delay
+  setTimeout(() => {
+    showToast('📲 Instale o LinguaQuest no seu celular!', 'xp');
+  }, 3000);
+});
+
+// ══════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════
+(function init() {
+  loadUserData();
+  // Pre-fill name if returning user
+  if (userName) {
+    document.getElementById('nameInput').value = userName;
+    // Pre-select language
+    document.querySelectorAll('#langGrid .lang-card').forEach(c => {
+      c.classList.toggle('selected', c.dataset.lang === currentLang);
+    });
+    selectedLangOnSplash = currentLang;
+    // If returning user, skip splash
+    goHome();
+  }
+})();
+</script>
+</body>
+</html>
